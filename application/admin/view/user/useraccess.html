@@ -1,0 +1,76 @@
+{include file="public/header"}
+
+<body>
+  <div class="x-nav">
+    <span class="layui-breadcrumb">
+      <cite>管理员列表</cite>
+    </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+      title="刷新">
+      <i class="layui-icon" style="line-height:30px; display: block; padding-top: 4px">ဂ</i></a>
+  </div>
+  <div class="x-body">
+    <div class="layui-row">
+      <form class="layui-form layui-col-md12 x-so" action="{:url('admin/adminuser/adminUser')}" method="GET">
+        <input type="text" name="key" placeholder="用户账号/用户名" autocomplete="off" class="layui-input" style="width:200px;">
+        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+      </form>
+    </div>
+    <xblock>
+      <button class="layui-btn" onclick="x_admin_show('添加用户','{:url('admin/adminuser/addadminuser')}')"><i class="layui-icon"></i>添加用户</button>
+      <span class="x-right" style="line-height:40px">共有数据：<i>{$user.total}</i> 条</span>
+    </xblock>
+    <table class="layui-table">
+      <thead>
+        <tr style="background-color:#ecc18c; color: #821d1d;">
+          <th>编号</th>
+          <th>用户账号</th>
+          <th>用户名</th>
+          <th>所有权限</th>
+          <th>操作</th>
+      </thead>
+      <tbody>
+        {volist name="user.data" id="vo" empty='暂时没有数据' key='key'}
+        <tr style="background-color:#f1d9bc;">
+          <td>{$key}</td>
+          <td>{$vo.ad_username}</td>
+          <td>{$vo.ad_name}</td>
+          <td>
+            {volist name="vo.role" id="v" empty='没有分配权限' }
+            <span style="color:#fff;background-color:rgb(55,172,199);padding:4px;border-radius:4px">{$v}</span>
+            {/volist}
+          </td>
+          <td class="td-manage" style="text-align:center;">
+            <a title="分配权限" onclick="x_admin_show('编辑','{:url('admin/adminuser/addUserAccess',['uid'=>$vo.id,'uname'=>$vo.ad_username])}')"
+              href="javascript:;" class="btn-edit">
+              <i class="layui-icon">&#xe642;</i>分配权限
+            </a>
+          </td>
+        </tr>
+        {/volist}
+      </tbody>
+    </table>
+    <div class="page">
+      <div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#start' //指定元素
+      });
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#end' //指定元素
+      });
+    });
+  </script>
+</body>
+
+</html>

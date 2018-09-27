@@ -1,0 +1,125 @@
+{include file="public/header"}
+
+<body>
+  <div class="x-nav">
+    <span class="layui-breadcrumb">
+      <cite>分类列表</cite></a>
+    </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+      title="刷新">
+      <i class="fa fa-refresh" style="line-height:30px; display: block; padding-top: 4px"></i></a>
+  </div>
+  <div class="x-body">
+    <xblock>
+      <button class="layui-btn" lay-submit="" onclick="x_admin_show('添加分类','{:url('admin/webcate/addcate')}')"><i class="layui-icon"></i>增加</button>
+      <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+      <span class="x-right" style="line-height:40px">目前共有：{$cateTotal} 个分类</span>
+    </xblock>
+    <table class="layui-table layui-form">
+      <thead>
+        <tr>
+          <th width="20">
+            <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+          </th>
+          <th width="70">编号</th>
+          <th>分类名</th>
+          <th width="50">排序</th>
+          <th width="70">轮播状态</th>
+          <th width="220">操作</th>
+      </thead>
+      <tbody class="x-cate">
+        {volist name="cate" id="data" empty="暂时没有数据"}
+        <tr cate-id='{$data.id}' fid='0'>
+          <td>
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$data.id}'><i class="layui-icon">&#xe605;</i></div>
+          </td>
+          <td>{$i}</td>
+          <td>
+            {if condition="!empty($data.child)"}
+            <i class="layui-icon x-show" status='true'>&#xe623;</i>
+            {else /} {/if} {$data.cate_name}
+          </td>
+          <td><input type="number" min="0" class="layui-input x-sort catesort-{$data.id}" name="catesort" value="{$data.cate_sort}" onblur="upDateSort($(this).val(),{$data.id})"></td>
+          <td>
+            <input type="checkbox" name="switch" lay-text="开启|停用" checked="" lay-skin="switch">
+          </td>
+          <td class="td-manage">
+            <button class="layui-btn layui-btn layui-btn-xs" onclick="x_admin_show('编辑','{:url('admin/webcate/upDateCate',['id'=>$data.id,'catename'=>$data.cate_name])}')"><i class="layui-icon">&#xe642;</i>编辑</button>
+            <button class="layui-btn layui-btn-warm layui-btn-xs" onclick="x_admin_show('添加子分类','{:url('admin/webcate/addcate',['id'=>$data.id])}')"><i
+                class="layui-icon">&#xe642;</i>添加子栏目</button>
+            {if condition="empty($data.child)"}
+            <button class="layui-btn-danger layui-btn layui-btn-xs" onclick="member_del(this,'{$data.id}')" href="javascript:;"><i
+                class="layui-icon">&#xe640;</i>删除</button>
+            {else /} {/if}
+          </td>
+        </tr>
+        {volist name="$data.child" id="v" key='key'}
+        <tr cate-id='{$v.id}' fid='{$data.id}'>
+          <td>
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$v.id}'><i class="layui-icon">&#xe605;</i></div>
+          </td>
+          <td>{$key}</td>
+          <td>
+            &nbsp;&nbsp;&nbsp;&nbsp; {if condition="!empty($v.child)"}
+            <i class="layui-icon x-show" status='true'>&#xe623;</i>
+            {else /}<i> -- </i>
+            {/if} {$v.cate_name}
+          </td>
+          <td><input type="number" min="0" class="layui-input x-sort catesort-{$v.id}" name="catesort" value="{$v.cate_sort}" onchange="upDateSort($(this).val(),{$v.id})"></td>
+          <td>
+            <input type="checkbox" name="switch" lay-text="开启|停用" checked="" lay-skin="switch">
+          </td>
+          <td class="td-manage">
+            <button class="layui-btn layui-btn layui-btn-xs" onclick="x_admin_show('编辑','admin-edit.html')"><i class="layui-icon">&#xe642;</i>编辑</button>
+            <button class="layui-btn-danger layui-btn layui-btn-xs" onclick="member_del(this,'{$v.id}')" href="javascript:;"><i
+                class="layui-icon">&#xe640;</i>删除</button>
+          </td>
+        </tr>
+        {/volist} {/volist}
+      </tbody>
+    </table>
+  </div>
+  <style type="text/css">
+  </style>
+  <script>
+    layui.use(['form'], function () {
+      form = layui.form;
+    });
+    // 排序修改
+    function upDateSort (sort,id) {
+        var cateSort = sort;
+        var cateId = id;
+        $.post("{:url('admin/webcate/upDateSortHandle')}",{'id':cateId,'sort':cateSort},function success(response){
+          if (response.errno == 0){
+              window.location.reload();
+          }
+        },'json')
+    }
+    /*删除*/
+    function member_del(obj, id) {
+      layer.confirm('确认要删除吗？', function (index) {
+        $.post("{:url('admin/webcate/deleteHandle')}", { 'id': id }, function success(response) {
+          if (response.errno == 0) {
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!', { icon: 1, time: 1000 });
+          }
+        }, 'json');
+      });
+    }
+    // 删除多个
+    function delAll(argument) {
+      var data = tableCheck.getData();
+      var id = data.join(",");
+      layer.confirm('确认要删除吗？', function (index) {
+        $.post("{:url('admin/webcate/deleteHandle')}", { 'id': id }, function success(response) {
+          if (response.errno == 0) {
+            layer.msg('删除成功', { icon: 1 });
+            $(".layui-form-checked").not('.header').parents('tr').remove();
+          }
+        }, 'json');
+      });
+    }
+  </script>
+</body>
+
+</html>

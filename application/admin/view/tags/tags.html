@@ -1,0 +1,147 @@
+{include file="public/header"}
+
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+            <cite>标签列表</cite>
+        </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+            title="刷新">
+            <i class="fa fa-refresh" style="line-height:30px; display: block; padding-top: 4px"></i></a>
+    </div>
+    <div class="x-body">
+        <div class="layui-row">
+            <form class="layui-form layui-col-md12 x-so" action="{:url('admin/tags/tags')}" method="GET">
+                <input type="text" name="key" placeholder="标签名称/标签描述" autocomplete="off" class="layui-input" style="width:200px;">
+                <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+            </form>
+        </div>
+        <xblock>
+            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+            <button class="layui-btn" onclick="x_admin_show('添加标签','{:url('admin/tags/addtags')}')"><i class="layui-icon"></i>添加</button>
+            <span class="x-right" style="line-height:40px">共有数据：<i>{$tags.total}</i> 条</span>
+        </xblock>
+        <table class="layui-table">
+            <thead>
+                <tr style="background-color:#2F4056; color: #fff;">
+                    <th>
+                        <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+                    </th>
+                    <th>编号</th>
+                    <th>标签名称</th>
+                    <th>创建时间</th>
+                    <th>标签颜色/展示</th>
+                    <th>标签描述</th>
+                    <th width="60">排序</th>
+                    <th>标签开关</th>
+                    <th>操作</th>
+            </thead>
+            <tbody>
+                {volist name="tags.data" id="vo" key="key" empty="暂时没有数据哦!"}
+                <tr style="background-color:#667890;color:#fff">
+                    <td>
+                        <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$vo.id}'><i class="layui-icon">&#xe605;</i></div>
+                    </td>
+                    <td>{$key}</td>
+                    <td>{$vo.tags_title}</td>
+                    <td>{$vo.tags_time|date='Y-m-d',###}</td>
+                    <td>
+                        <span style="display:block;padding: 8px;background-color: {$vo.tags_color};color: #fff;border-radius:4px;">{$vo.tags_title}</span>
+                    </td>
+                    <td>{$vo.tags_desc}</td>
+                    <td>
+                        <input type="number" min="0" class="layui-input x-sort tags-{$vo.id}" name="tagssort" value="{$vo.tags_sort}"
+                        onchange="upDateTagsSort($(this).val(),{$vo.id})">
+                    </td>
+                    <td>
+                        <input type="radio" name="tsign-{$vo.id}" value="" {if condition="$vo.tags_sign==1" }checked="checked"
+                            {/if} onclick="updateTagsSign({$vo.id})">显示中
+                        <input type="radio" name="tsign-{$vo.id}" value="" {if condition="$vo.tags_sign==0" }checked="checked"
+                            {/if} onclick="updateTagsSign({$vo.id})">未显示
+                    </td>
+                    <td class="td-manage" style="text-align:center;">
+                        <a title="编辑" onclick="x_admin_show('编辑','{:url('admin/tags/tagsUpdate',['id' => $vo.id])}')"
+                            href="javascript:;" class="btn-edit" style="background-color:#074444;">
+                            <i class="layui-icon">&#xe642;</i>编辑
+                        </a>
+                        <a title="删除" onclick="member_del(this,{$vo.id})" href="javascript:;" class="btn-detele">
+                            <i class="layui-icon">&#xe640;</i>删除
+                        </a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+        <div class="page">
+            <div>
+                {$tags.page}
+            </div>
+        </div>
+
+    </div>
+    <script>
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+        });
+        function member_del(obj, id) {
+            layer.confirm('确认要删除吗？', function (index) {
+                $.ajax({
+                    type: 'POST',
+                    url: "{:url('admin/tags/tagsDelete')}",
+                    data: { 'id': id },
+                    success: function (response) {
+                        $(obj).parents("tr").remove();
+                        layer.msg(response, { icon: 7, time: 500 });
+                    },
+                    dataType: "json"
+                });
+            });
+        }
+        function delAll(argument) {
+            var data = tableCheck.getData();
+            var tId = data.join(',');
+            layer.confirm('确认要删除吗？', function (index) {
+                $.ajax({
+                    type: 'POST'
+                    , url: "{:url('admin/tags/tagsDelete')}"
+                    , data: { 'id': tId }
+                    , dataType: 'json'
+                    , success: function (response) {
+                        layer.msg('删除成功', { icon: 1 });
+                        $(".layui-form-checked").not('.header').parents('tr').remove();
+                    }
+                });
+            });
+        }
+    </script>
+    <script>
+        function upDateTagsSort(sort, id) {
+            $.ajax({
+                type: 'post'
+                , url: "{:url('admin/tags/tagssort')}"
+                , data: { 'id': id, 'sort': sort }
+                , dataType: 'json'
+                , success: function (response) {
+                    if (response.errno == 0) {
+                        layer.msg(response.mge, { icon: 7, time: 500 }, function () {
+                            window.location.reload();
+                        });
+                    }
+                }
+            });
+        }
+        function updateTagsSign(id) {
+            $.ajax({
+                type: 'post'
+                , url: "{:url('admin/tags/tagssign')}"
+                , data: { 'id': id }
+                , dataType: 'json'
+                , success: function (response) {
+                    layer.msg(response, { icon: 7, time: 500 });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

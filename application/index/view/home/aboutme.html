@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
+    <link rel="stylesheet" href="__CSS__/font-awesome.min.css" />
+    <link rel="stylesheet" href="__CSS__/swiper-4.3.3.min.css" />
+    <link rel="stylesheet" href="__CSS__/public.css" />
+    <link rel="stylesheet" href="__CSS__/aboutme.css" />
+    <title>关于我_zhangxxun</title>
+    <script src="__JS__/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var img = $('img');
+            var num = 0;
+            if (img.length == 0) {
+                $('.loadhtml').fadeOut();
+            } else {
+                img.each(function (i) {
+                    var objImg = new Image();
+                    objImg.onload = function () {
+                        num++;
+                        if (num >= i) {
+                            $('.loadhtml').fadeOut();
+                        }
+                    }
+                    objImg.src = img[i].src;
+                });
+            }
+        }
+    </script>
+</head>
+
+<body class="blog-box aboutme-body">
+    <!-- Load -->
+    <div class="loadhtml" id="load">
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <div class="aboutme-nav">
+        <div class="nav-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+    <div class="nav-list">
+        <ul class="nav-ul">
+            <a href="{:url('index/index/index')}">
+                <li>网站首页</li>
+            </a>
+            <a href="{:url('index/study/study')}">
+                <li>学海无涯</li>
+            </a>
+            <a href="{:url('index/heart/heart')}">
+                <li>心灵鸡汤</li>
+            </a>
+            <a href="{:url('index/noisylife/noisylife')}">
+                <li>喧嚣生活</li>
+            </a>
+            <a class="action">
+                <li>关于我</li>
+            </a>
+            <a>
+                <li>
+                    <i class="li-close fa fa-times"></i>
+                </li>
+            </a>
+        </ul>
+    </div>
+    <div class="aboutme">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide aboutme-introduction" style="background-image: url('__STATIC__/images/aboutme-bg1.jpg')">
+                    <section class="aboutme-cover">
+                        <div class="container">
+                            <div class="row">
+                                <div class="cover-box col-sm-12">
+                                    <div class="logo">
+                                        <a href="{:url('index/index/index')}">
+                                            <img src="__STATIC__/images/aboutmelogo.png" alt="">
+                                        </a>
+                                        <h3>2018</h3>
+                                    </div>
+                                    <div class="motto">
+                                        <h3 class="motto-text">假如生活欺骗了你,不要悲伤,不要害怕,反正都骗了!</h3>
+                                        <span>--XXX</span>
+                                    </div>
+                                    <div class="aboutme-btn">
+                                        <a id="mebtn">关于我</a>
+                                        <a id="webbtn">关于本站</a>
+                                    </div>
+                                    <div class="down-icon">
+                                        <a id="iconDown" title="查看更多">
+                                            <i class="fa fa-angle-double-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="swiper-slide aboutme-resume" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                    <section class="resume">
+                        <div class="resume-box">
+                            <div class="intion-title">
+                                <h1>关于我</h1>
+                                <span>(AboutMe)</span>
+                            </div>
+                            <div class="intion-content">
+                                <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                                <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                                <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                            </div>
+                            <div class="intion-contact">
+                                <div class="we-qr">
+                                    <img src="__STATIC__/images/wx-QR.png" alt="">
+                                    <span>微信二维码</span>
+                                </div>
+                                <div class="contact">
+                                    <a href="">
+                                        <i class="fa fa-qq"></i>
+                                        <span>939129894</span>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-weixin"></i>
+                                        <span>zhangxunxun957loveme</span>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>zhangxunxun1314@outlook.com</span>
+                                        <span>|939129894@qq.com</span>
+                                    </a>
+                                    <a href="https://weibo.com/u/6018806697" target="_block">
+                                        <i class="fa fa-weibo"></i>
+                                        <span>https://weibo.com/u/6018806697</span>
+                                    </a>
+                                    <a href="" target="_block">
+                                        <i class="fa fa-github"></i>
+                                        <span>zhangxxun</span>
+                                    </a>
+                                    <div style="color:#000">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>重庆市渝北区</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resume-line"></div>
+                            <div class="resume-lineTwo"></div>
+                            <div class="resume-header">
+                            </div>
+                        </div>
+                        <div class="resume-form noroll">
+                            <h3>给我留言</h3>
+                            <div class="reform">
+                                <label for="contact">联系方式</label>
+                                <input type="text" name="contact" class="aboutme-contact">
+                                <label for="">留言内容</label>
+                                <textarea name="" rows="10" class="reform-text"></textarea>
+                            </div>
+                            <div class="subbtn">
+                                <button class="btn">点击留言</button>
+                            </div>
+                            <div class="reline"></div>
+                        </div>
+                        <!-- max-width:768 -->
+                        <div class="mresume-box">
+                            <div class="mtitle">
+                                <h3>关于我</h3>
+                                <div class="maboutme"></div>
+                            </div>
+                            <div class="mtitletwo">
+                                <h3>联系我</h3>
+                                <div class="mcontact"></div>
+                            </div>
+                            <div class="maboutme-into">
+                                <div class="into-close">
+                                    <div class="close">
+                                        <i class="fa fa-angle-double-left"></i>
+                                    </div>
+                                </div>
+                                <div class="into-title">
+                                    <h3>关于我</h3>
+                                    <span>(AboutMe)</span>
+                                    <div class="into-line"></div>
+                                </div>
+                                <div class="into-content noroll">
+                                    <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                                    <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                                    <p>自我介绍 [1] 是向别人展示你自我介绍 [1] 好不好，甚至直接 关系到你给别人的第一印象的好坏及以后交往的顺利与否。同 时，也是认识自我的手段。</p>
+                                </div>
+                                <div class="into-contact">
+                                    <div class="we-qr">
+                                        <img src="__STATIC__/images/wx-QR.png" alt="">
+                                        <span>微信二维码</span>
+                                    </div>
+                                    <div class="contact">
+                                        <a href="">
+                                            <i class="fa fa-qq"></i>
+                                            <span>939129894</span>
+                                        </a>
+                                        <a href="">
+                                            <i class="fa fa-weixin"></i>
+                                            <span>zhangxunxun957loveme</span>
+                                        </a>
+                                        <a href="">
+                                            <i class="fa fa-envelope-o"></i>
+                                            <span>zhangxunxun1314@outlook.com</span>
+                                            <span>|939129894@qq.com</span>
+                                        </a>
+                                        <a href="https://weibo.com/u/6018806697" target="_block">
+                                            <i class="fa fa-weibo"></i>
+                                            <span>https://weibo.com/u/6018806697</span>
+                                        </a>
+                                        <a href="" target="_block">
+                                            <i class="fa fa-github"></i>
+                                            <span>zhangxxun</span>
+                                        </a>
+                                        <div style="color:#000">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span>重庆市渝北区</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="maboutme-cact">
+                                <div class="cact-close">
+                                    <div class="close">
+                                        <i class="fa fa-angle-double-left"></i>
+                                    </div>
+                                </div>
+                                <div class="cact-title">
+                                    <h3>给我留言</h3>
+                                </div>
+                                <div class="reform noroll">
+                                    <label for="contact">联系方式</label>
+                                    <input type="text" name="contact" class="aboutme-contact">
+                                    <label for="">留言内容</label>
+                                    <textarea name="" rows="10" class="reform-text"></textarea>
+                                </div>
+                                <div class="subbtn">
+                                    <button class="btn">点击留言</button>
+                                </div>
+                                <div class="reline"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="swiper-slide aboutme-skill" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                    <div class="skill">
+                        <div class="container">
+                            <div class="row">
+                                <div class="skill-box col-sm-12">
+                                    <div class="skill-list col-sm-4">
+                                        <h1>我的技能</h1>
+                                        <ul class="list-ul noroll">
+                                            <li class="skill-php">
+                                                <img src="__STATIC__/images/php-icon.png" alt="">
+                                                <span class="skill-text">Php</span>
+                                                <div class="php-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/sql-icon.png" alt="">
+                                                <span class="skill-text">MySql</span>
+                                                <div class="sql-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/html-icon.png" alt="">
+                                                <span class="skill-text">Html</span>
+                                                <div class="html-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/css-icon.png" alt="">
+                                                <span class="skill-text">Css</span>
+                                                <div class="css-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/js-icon.png" alt="">
+                                                <span class="skill-text">Javascript</span>
+                                                <div class="js-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/ps-icon.png" alt="">
+                                                <span class="skill-text">PhotoShop</span>
+                                                <div class="ps-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/fl-icon.png" alt="">
+                                                <span class="skill-text">Flash</span>
+                                                <div class="fl-bg actionkAnmh"></div>
+                                            </li>
+                                            <li>
+                                                <img src="__STATIC__/images/more-icon.png" alt="">
+                                                <span class="skill-text">其他软件</span>
+                                                <div class="more-bg actionkAnmh"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-content col-sm-8">
+                                        <div class="content">
+                                            <div class="php skill-label">
+                                                <h1>Php</h1>
+                                                <span>熟练</span>
+                                                <span>thinkPHP -- 熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="mysql skill-label">
+                                                <h1>MySql</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="html skill-label">
+                                                <h1>Html</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="css skill-label">
+                                                <h1>Css</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="javascript skill-label">
+                                                <h1>JavaScript</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="photoshop skill-label">
+                                                <h1>PhotoShop</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="flash skill-label">
+                                                <h1>Flash</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                            <div class="appmore skill-label">
+                                                <h1>其他</h1>
+                                                <span>熟练</span>
+                                                <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                    学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                    网页。用PHP做出的动态...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- max-width 768px -->
+                    <div class="mskill">
+                        <div class="container">
+                            <div class="row">
+                                <div class="mskill-content col-xs-12">
+                                    <div class="mcontent">
+                                        <div class="php mskill-label">
+                                            <h1>Php</h1>
+                                            <span>熟练</span>
+                                            <span>thinkPHP -- 熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="mysql mskill-label">
+                                            <h1>MySql</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="html mskill-label">
+                                            <h1>Html</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="css mskill-label">
+                                            <h1>Css</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="javascript mskill-label">
+                                            <h1>JavaScript</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="photoshop mskill-label">
+                                            <h1>PhotoShop</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="flash mskill-label">
+                                            <h1>Flash</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                        <div class="appmore mskill-label">
+                                            <h1>其他</h1>
+                                            <span>熟练</span>
+                                            <p>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器” ）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于
+                                                学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Ja va、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态
+                                                网页。用PHP做出的动态...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mskill-list noroll">
+                                        <ul class="mlist-ul">
+                                            <li>Php</li>
+                                            <li>Mysql</li>
+                                            <li>Html</li>
+                                            <li>Css</li>
+                                            <li>JavaScript</li>
+                                            <li>PhotoShop</li>
+                                            <li>Flash</li>
+                                            <li>其他软件</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide aboutme-web" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                    <div class="web-info">
+                        <div class="container">
+                            <div class="row">
+                                <div class="web-content col-sm-8">
+                                    <div class="content-title">
+                                        <h2>关于本站</h2>
+                                        <p>如果你很不小心进来异次元，然后又很不小心地进来了这个页面， 那么证明你对我这人或这个网站有点兴趣，如果我表错情了，不 是你的错，我应该检讨一下为什么这个页面的链接这么容易被人
+                                            点到；如果我没错，那么，我应该暗自 YY 一下，可能又有一个 小朋友稀饭我鸟，~\(≧▽≦)/~啦啦啦……
+                                        </p>
+                                    </div>
+                                    <div class="content-tool">
+                                        <p>前端:BootStrap,Font Awesome</p>
+                                        <p>后端:Php,ThinkPHP5</p>
+                                        <p>开发者:Zion Chueng | 2018.8</p>
+                                    </div>
+                                    <div class="content-bottom">
+                                        <a class="b-qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=939129894&site=qq&menu=yes">
+                                            <i class="fa fa-qq"></i>
+                                        </a>
+                                        <ul class="b-list">
+                                            <li class="logo"><img src="__STATIC__/images/aboutmelogo2.png" alt=""></li>
+                                            <li>
+                                                <p>zhangxxun | 2018.8</p>
+                                            </li>
+                                            <li><a href="http://www.miitbeian.gov.cn" target="_black">蜀ICP备18020042号-1</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    </div>
+    <script src="__JS__/bootstrap.min.js "></script>
+    <script src="__JS__/swiper-4.3.3.min.js "></script>
+    <script type="text/javascript ">
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+                clickable: true,
+                type: 'progressbar',
+            },
+            /* autoplay: {
+                delay: 10000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            }, */
+            direction: 'vertical',
+            noSwiping: true,
+            noSwipingClass: 'noroll',
+            mousewheel: true,
+            speed: 1000,
+            resistanceRatio: 0,
+            on:{
+                slideChangeTransitionEnd:function(){
+                    var currPage = this.activeIndex;
+                    var liAni = $('.list-ul>li>div');
+                    if (currPage == 2) {
+                        liAni.addClass('actionkAnm');
+                    }else{
+                        liAni.removeClass('actionkAnm');
+                    }           
+                }
+            }
+        });
+        $('#mebtn').click(function() {
+            swiper.slideNext();
+        });
+        $('#iconDown').click(function() {
+            swiper.slideNext();
+        });
+        $('#webbtn').click(function(){
+            swiper.slideTo(3, 1000, false);
+        });
+        $(function() {
+            $('.list-ul').on('mouseover', 'li', function () {
+                    var labelBtn = $('.skill-label');
+                    var liIndex = $(this).index();
+                    labelBtn.eq(liIndex)
+                    .addClass('skillaction')
+                    .siblings().removeClass('skillaction');
+             });
+             $('.mlist-ul').on('click','li',function(){
+                 var mlabelBtn = $('.mskill-label');
+                 var mliIndex = $(this).index();
+                 mlabelBtn.eq(mliIndex)
+                 .show()
+                 .siblings().hide();
+             });
+            $('.cover-box').fadeIn(1000);
+            $('.nav-icon').click(function() {
+                var navAni = $('.nav-list');
+                var navCloseAni = $('.li-close');
+                navAni.animate({
+                    right: '0'
+                }, 1000);
+                navAni.animate({
+                    borderTopLeftRadius: '14em',
+                    borderBottomLeftRadius: '14em'
+                }, 600);
+                navCloseAni.animate({
+                    opacity: '1'
+                }, 1000);
+                navCloseAni.animate({
+                    marginTop: '0'
+                }, 500);
+                navCloseAni.animate({
+                    marginTop: '10px'
+                }, 100);
+                navCloseAni.animate({
+                    marginTop: '0'
+                }, 100);
+                navCloseAni.animate({
+                    marginTop: '10px'
+                }, 100);
+                navCloseAni.animate({
+                    marginTop: '0'
+                }, 100);
+            });
+            $('.li-close').click(function() {
+                var navAni = $('.nav-list');
+                var navCloseAni = $('.li-close');
+                navAni.animate({
+                    borderTopLeftRadius: '0em',
+                    borderBottomLeftRadius: '0em'
+                }, 600);
+                navAni.animate({
+                    right: '-328px'
+                }, 1000);
+                navCloseAni.animate({
+                    opacity: '0'
+                });
+                navCloseAni.animate({
+                    backgroundColor: 'none'
+                }, 1000);
+                navCloseAni.animate({
+                    marginTop: '320px'
+                }, 1000);
+            });
+            $('.mtitle').click(function() {
+                var maboutmeAni = $('.maboutme-into');
+                maboutmeAni.animate({left:'50%'},1000);
+            });
+            $('.into-close').click(function(){
+                var maboutmeAni = $('.maboutme-into');
+                maboutmeAni.animate({left:'-55%'},500);
+            });
+            $('.mtitletwo').click(function() {
+                var maboutmeAni = $('.maboutme-cact');
+                maboutmeAni.animate({left:'50%'},1000);
+            });
+            $('.cact-close').click(function(){
+                var maboutmeAni = $('.maboutme-cact');
+                maboutmeAni.animate({left:'-55%'},500);
+            });
+        });
+    </script>
+</body>
+
+</html>

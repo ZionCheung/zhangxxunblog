@@ -1,0 +1,45 @@
+---------------------------------------------------------------
+[ 2018-09-25T22:26:26+08:00 ] 127.0.0.1 GET /
+[ info ] 127.0.0.1/ [运行时间：0.108616s][吞吐率：9.21req/s] [内存消耗：2,610.34kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536064277,1536155519,1536392549,1536401673',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\www\zhangxxunblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\index.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'banner',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019227s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.025474s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000959s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.007308s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.007581s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` ASC LIMIT 10 [ RunTime:0.002855s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000266s ]

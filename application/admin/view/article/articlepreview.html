@@ -1,0 +1,29 @@
+{include file="public/header"}
+
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+            <cite>文章预览</cite>
+        </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+            title="刷新">
+            <i class="fa fa-refresh" style="line-height:30px; display: block; padding-top: 4px"></i>
+        </a>
+    </div>
+    <article>
+        <div class="imgbox">
+            <img src="__STATIC__/upload/article/original/{$article.article_cover}" alt="文章封面图" title="文章封面图">
+        </div>
+        <div class="pretitle">
+            <h1>本文标题:{$article.article_name}</h1>
+        </div>
+        <div class="author" style="text-align:center; color:rgb(63, 61, 61);">
+            <h3>本文作者:{$article.article_author}</h3>
+        </div>
+        <div class="content">
+            {$article.article_content}
+        </div>
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+{include file="public/header"}
+
+<body>
+  <div class="x-nav">
+    <span class="layui-breadcrumb">
+      <a>
+        <cite>导航元素</cite></a>
+    </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+      title="刷新">
+      <i class="layui-icon" style="line-height:30px; display: block; padding-top: 4px">ဂ</i></a>
+  </div>
+  <div class="x-body">
+    <div class="layui-row">
+      <form class="layui-form layui-col-md12 x-so" method="GET" action="{:url('admin/role/role')}">
+        <input type="text" name="key" placeholder="请输入角色名/描述" autocomplete="off" class="layui-input">
+        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+      </form>
+    </div>
+    <xblock>
+      <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+      <button class="layui-btn" onclick="x_admin_show('添加角色','{:url('admin/role/addrole')}')"><i class="layui-icon"></i>添加</button>
+      <span class="x-right" style="line-height:40px">共有数据：{$role.total} 条</span>
+    </xblock>
+    <table class="layui-table">
+      <thead>
+        <tr>
+          <th>
+            <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+          </th>
+          <th>ID</th>
+          <th>角色名</th>
+          <th>拥有权限规则</th>
+          <th>描述</th>
+          <th>状态</th>
+          <th>操作</th>
+      </thead>
+      <tbody>
+        {volist name="role.data" id="vo" empty="当前没有数据" key="key"}
+        <tr>
+          <td>
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$vo.id}'><i class="layui-icon">&#xe605;</i></div>
+          </td>
+          <td>{$key}</td>
+          <td>{$vo.title}</td>
+          <td style="max-width:296px">
+            {volist name="vo.ruleTitle" id="v"}
+            <span class="rule-list">{$v}</span>
+            {/volist}
+          </td>
+          <td>{$vo.describe}</td>
+          <td class="td-status">
+            {if condition="$vo.status eq 1"}
+            <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
+            {else/}
+            <span class="layui-btn layui-btn-normal layui-btn-disabled">已停用</span>
+            {/if}
+          </td>
+          <td class="td-manage">
+            {if condition="$vo.status eq 1"}
+            <a onclick="member_stop(this,{$vo.id})" href="javascript:;" title="启用">
+              <i class="layui-icon" style="margin-right: 8px;">&#xe601;点击禁用</i>
+              {else/}
+              <a onclick="member_stop(this,{$vo.id})" href="javascript:;" title="禁用">
+                <i class="layui-icon" style="color:#009900;margin-right: 8px;">&#xe62f;点击启用</i>
+                {/if}
+              </a>
+              <a title="编辑" onclick="x_admin_show('角色编辑','{:url('admin/role/updateRole',['id'=>$vo.id])}')" href="javascript:;">
+                <i class="layui-icon" style="color:#0493be; margin-right: 4px;">&#xe642;</i><span style="color:#0493be">编辑</span>
+              </a>
+              <a title="删除" onclick="member_del(this,{$vo.id})" href="javascript:;">
+                <i class="layui-icon" style="color:#ff5e00">&#xe640;</i><span style="color:#ff5e00">删除</span>
+              </a>
+          </td>
+        </tr>
+        {/volist}
+      </tbody>
+    </table>
+    <div class="page">
+      <div>
+        {$role.page}
+      </div>
+    </div>
+
+  </div>
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#start' //指定元素
+      });
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#end' //指定元素
+      });
+    });
+
+    /*停用*/
+    function member_stop(obj, id) {
+
+      layer.confirm('确认要禁用/开启该角色吗？', function (index) {
+
+        if ($(obj).attr('title') == '启用') {
+
+          $.post("{:url('admin/role/updateOnOffRole')}", { 'id': id }, function success(response) {
+          }, 'json');
+          $(obj).attr('title', '停用')
+          $(obj).find('i').html('<i class="layui-icon" style="color:#009900">&#xe62f;点击启用</i>');
+
+          $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+          layer.msg('已停用!', { icon: 5, time: 500 });
+        } else {
+          $.post("{:url('admin/role/updateOnOffRole')}", { 'id': id }, function success(response) {
+          }, 'json');
+          $(obj).attr('title', '启用')
+          $(obj).find('i').html('&#xe601;点击禁用');
+
+          $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
+          layer.msg('已启用!', { icon: 6, time: 500 });
+        }
+
+      });
+    }
+
+    /*删除*/
+    function member_del(obj, id) {
+      layer.confirm('确认要删除吗？', function (index) {
+        $.post("{:url('admin/role/deleteRole')}", { 'id': id }, function success(response) {
+          $(obj).parents("tr").remove();
+          layer.msg(response, { icon: 7, time: 500 });
+        }, 'json');
+      });
+    }
+
+    // 批量删除
+    function delAll(argument) {
+      var data = tableCheck.getData();
+      var id = data.join(',');
+      layer.confirm('确认要删除吗？', function (index) {
+        $.post("{:url('admin/role/deleteRole')}", { 'id': id }, function success(response) {
+          layer.msg(response, { icon: 7, time: 500 });
+          $(".layui-form-checked").not('.header').parents('tr').remove();
+        }, 'json');
+      });
+    }
+  </script>
+</body>
+
+</html>

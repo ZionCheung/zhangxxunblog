@@ -1,0 +1,44 @@
+{include file="public/header"}
+
+<body>
+    <div class="x-body">
+        <form class="layui-form" method="POST" action="{:url('admin/webcate/upDateCateHandle')}">
+            <div class="layui-form-item">
+                <label for="catename" class="layui-form-label">
+                    <span class="x-red">*</span>新分类名称
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="catename" name="catename" required="" class="layui-input" value="{$cateInfo.catename}">
+                    <input type="hidden" value="{$cateInfo.id}" name="cateid">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red cateinfo">*请确保分类唯一</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    确认修改
+                </button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.layui-form').on('blur', '#catename', function () {
+                var cateName = $('#catename').val();
+                $.post("{:url('admin/webcate/cateNameHandle')}", { 'cateName': cateName }, function success(response) {
+                    if (response.errno == 0) {
+                        $('.cateinfo').html('当前分类名称可以使用!!!');
+                    } else {
+                        $('.cateinfo').html('分类已经存在/分类不能为空!!!');
+                        $('#catename').val('');
+                    }
+                }, 'json')
+            });
+        });
+    </script>
+</body>
+
+</html>

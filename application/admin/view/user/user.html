@@ -1,0 +1,142 @@
+{include file="public/header"}
+
+<body>
+  <div class="x-nav">
+    <span class="layui-breadcrumb">
+      <cite>管理员列表</cite>
+    </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+      title="刷新">
+      <i class="layui-icon" style="line-height:30px; display: block; padding-top: 4px">ဂ</i></a>
+  </div>
+  <div class="x-body">
+    <div class="layui-row">
+      <form class="layui-form layui-col-md12 x-so" action="{:url('admin/adminuser/adminUser')}" method="GET">
+        <input type="text" name="key" placeholder="用户账号/用户名/邮箱/手机号" autocomplete="off" class="layui-input" style="width:200px;">
+        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+      </form>
+    </div>
+    <xblock>
+      <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+      <button class="layui-btn" onclick="x_admin_show('添加用户','{:url('admin/adminuser/addadminuser')}')"><i class="layui-icon"></i>添加</button>
+      <span class="x-right" style="line-height:40px">共有数据：<i>{$user.total}</i> 条</span>
+    </xblock>
+    <table class="layui-table">
+      <thead>
+        <tr style="background-color:#ecc18c; color: #821d1d;">
+          {if condition='$userId===1'}
+          <th>
+            <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+          </th>
+          {/if}
+          <th>编号</th>
+          <th>用户账号</th>
+          <th>用户名</th>
+          <th>头像</th>
+          <th>邮箱</th>
+          <th>手机号</th>
+          <th>添加时间</th>
+          <th>添加IP</th>
+          <th>登录权限</th>
+          <th>操作</th>
+      </thead>
+      <tbody>
+        {volist name="user.data" id="vo" key="key" empty="暂时没有数据"}
+        <tr style="background-color:#f1d9bc;">
+          {if condition='$userId===1'}
+          <td>
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$vo.id}'><i class="layui-icon">&#xe605;</i></div>
+          </td>
+          {/if}
+          <td>{$key}</td>
+          <td>{$vo.ad_username}</td>
+          <td>{$vo.ad_name}</td>
+          <td>
+            {if condition="strlen($vo.ad_headimg)>11"}
+            <img src="{$vo.ad_headimg}" alt="" style="border-radius: 4px; width: 80px; height: 80px;">
+            {else/}
+            <img src="__STATIC__/upload/admin/heads/{$vo.ad_headimg}" alt="" id="adhead-{$vo.id}" style="border-radius: 4px; width: 80px; height: 80px;">
+            {/if}
+          </td>
+          <td>{$vo.ad_email}</td>
+          <td>{$vo.ad_phone}</td>
+          <td>{$vo.ad_retime|date='Y-m-d H:i:s',###}</td>
+          <td>{$vo.ad_regip}</td>
+          <td>
+            <input type="radio" name="sign_{$key}" {if condition="$vo.ad_sign==1" } checked="checked" {else/}{/if}
+              onclick="statusOnOff({$vo.id})">开启 <input type="radio" name="sign_{$key}" {if condition="$vo.ad_sign==0"
+              } checked="checked" {else/}{/if} onclick="statusOnOff({$vo.id})">关闭
+          </td>
+          <td class="td-manage">
+            {if condition = "$vo.ad_username eq $username"}
+            <a title="编辑" onclick="x_admin_show('编辑','{:url('admin/adminuser/updateUser',['uid' => $vo.id])}')" href="javascript:;"
+              class="btn-edit">
+              <i class="layui-icon">&#xe642;</i>编辑
+            </a>
+            {else/}
+            <a title="无法编辑" href="javascript:;" class="btn-edit-lock">
+              <i class="layui-icon">&#xe642;</i>编辑
+            </a>
+            {/if}
+            <a title="删除" onclick="member_del(this,{$vo.id})" href="javascript:;" class="btn-detele">
+              <i class="layui-icon">&#xe640;</i>删除
+            </a>
+          </td>
+        </tr>
+        {/volist}
+      </tbody>
+    </table>
+    <div class="page">
+      <div>
+        {$user.page}
+      </div>
+    </div>
+
+  </div>
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#start' //指定元素
+      });
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#end' //指定元素
+      });
+    });
+
+    /*用户-删除*/
+    function member_del(obj, id) {
+      var imgRoute = $('#adhead-' + id).attr('src');
+      layer.confirm('确认要删除吗？', function (index) {
+        $.ajax({
+          type: 'POST',
+          url: "{:url('admin/adminuser/deleteadminuser')}",
+          data: { 'id': id, 'imgRoute': imgRoute },
+          success: function (response) {
+            $(obj).parents("tr").remove();
+            layer.msg(response, { icon: 7, time: 500 });
+          },
+          dataType: "json"
+        });
+      });
+    }
+    // 修改登陆权限
+    function statusOnOff(id) {
+      $.ajax({
+        type: 'POST',
+        url: "{:url('admin/adminuser/updateUserOnOff')}",
+        data: { 'id': id },
+        success: function (response) {
+          layer.msg(response, { icon: 7, time: 500 });
+        },
+        dataType: 'json'
+      });
+    }
+  </script>
+</body>
+
+</html>

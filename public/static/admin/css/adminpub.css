@@ -1,0 +1,193 @@
+.container {
+    height: 80px;
+}
+
+.container .logo a {
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.container .logo img {
+    max-height: 64px;
+}
+
+.container .left_open {
+    height: 100%;
+}
+
+.container .left_open i {
+    margin: 0;
+    padding: 26px 8px;
+    font-size: 2em;
+}
+
+.container .left {
+    padding: 20px 20px;
+}
+
+.container .right {
+    padding: 16px 20px;
+}
+
+.left-nav {
+    top: 81px;
+    left: 0;
+    background-color: rgba(34, 34, 34, 1);
+    border-right: solid 1px #00adff;
+}
+
+.left-nav a {
+    color: #fff;
+}
+
+.page-content {
+    top: 81px;
+    left: 221px;
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    background-color: #00adff;
+}
+
+.head-user {
+    width: 48px;
+    height: 48px;
+    float: left;
+    padding-right: 12px;
+}
+
+.head-user img {
+    width: 48px;
+    height: 48px;
+    border: solid 2px #fff;
+    border-radius: 100%;
+}
+
+.nav-time {
+    min-height: 100px;
+}
+
+.page-content .layui-tab-title {
+    background-color: rgba(34, 34, 34, 1);
+}
+
+.layui-tab-title {
+    color: #fff;
+}
+
+.layui-tab-title li {
+    border-right: solid 1px #fff;
+}
+
+.layui-form-radio {
+    margin-top: 0;
+}
+
+.layui-table tbody tr td .rule-list {
+    display: inline-block;
+    padding: 2px 5px;
+    background-color: #00adff;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.btn-detele,
+.btn-edit {
+    padding: 8px 6px;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    margin-right: 2px;
+    transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+}
+
+.btn-detele {
+    background-color: #e85e0d;
+}
+
+.btn-edit {
+    background-color: #009900;
+}
+
+.btn-edit-lock {
+    background-color: #b4b7b4;
+    padding: 8px 6px;
+    border-radius: 2px;
+    color: #ffffff;
+    margin-right: 2px;
+}
+.btn-edit-lock:hover{
+    color: #fff;
+}
+.btn-detele:hover,
+.btn-edit:hover {
+    box-shadow: 1px 1px 4spx #ffffff inset;
+    -webkit-box-shadow: 1px 1px 4px #ffffff inset;
+    -moz-box-shadow: 1px 1px 6px #ffffff inset;
+    -o-box-shadow: 1px 1px 6px #ffffff inset;
+}
+
+.btn-detele:hover {
+    color: #00f1f1;
+}
+
+.btn-edit:hover {
+    color: #fa4f00;
+}
+.banner-box{
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    border-bottom: solid 2px #009900;
+    padding-bottom: 12px;
+}
+.banner-box .banner-img{
+    width: 1170px;
+    height: 480px;
+    overflow: hidden;
+    margin:  0 auto;
+    margin-bottom: 8px;
+    display: none;
+}
+.banner-box .article-img{
+    width: 1170px;
+    height: 520px;
+    overflow: hidden;
+    margin:  0 auto;
+    margin-bottom: 8px;
+    display: none;
+}
+.banner-box .article-img img,
+.banner-box .banner-img img{
+    width: 100%;
+}
+article .imgbox {
+    height: 520px;
+    width: 1170px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+article .pretitle {
+    text-align: center;
+    margin-top: 20px;
+    color: #413d3b;
+    margin-bottom: 8px;
+}
+article .content{
+    width: 1170px;
+    padding: 8px 12px;
+    margin: 0 auto;
+    line-height: 2em;
+    font-size: 1.2em;
+    color: #524e4d;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+article .content img {
+    max-width: 90%;
+}

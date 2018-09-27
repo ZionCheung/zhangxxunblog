@@ -1,0 +1,98 @@
+.desktop{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: url(../images/adloginbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+.desktop .lg-bg{
+    width: 23%;
+    height: inherit;
+    background-color: rgba(6, 6, 6,.7);
+    position: relative;
+    padding: 12em 0;
+}
+.desktop .lg-bg .lg-input{
+    width: 100%;
+    min-height: 100px;
+    text-align: center;
+    padding: 2em 1em;
+}
+.desktop .lg-bg .lg-logo {
+    padding: 12px 12px;
+}
+.desktop .lg-bg .lg-logo img{
+    width: 42%;
+}
+.desktop .lg-bg .lg-input .lg-from{
+    padding: 12px 2em;
+}
+.desktop .lg-bg .lg-input .lg-from label{
+    display: block;
+    text-align: left;
+    color: #fff;
+    margin: 0;
+    font-size: 1.8em;
+    font-family: Hobo Std;
+}
+.desktop .lg-bg .lg-input .lg-from input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    outline: none;
+    padding: 8px 6px;
+    border-radius: 4px;
+    border:solid 1px #555;
+    color: #555;
+    transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+}
+.desktop .lg-bg .lg-input .lg-from input:hover,
+.desktop .lg-bg .lg-input .lg-from input:focus{
+    box-shadow: 1px 1px 12px rgb(248, 153, 11) inset;
+    -webkit-box-shadow: 1px 1px 12px rgb(248, 153, 11) inset;
+    -moz-box-shadow: 1px 1px 12px rgb(248, 153, 11) inset;
+    -o-box-shadow: 1px 1px 12px rgb(248, 153, 11) inset;
+}
+.desktop .lg-bg .lg-input .lg-from .lg-code{
+    padding: 2px 2px;
+}
+.desktop .lg-bg .lg-input .lg-from .lg-code .code{
+    display: flex;
+    justify-content: flex-start;
+}
+.desktop .lg-bg .lg-input .lg-from .lg-code .code img{
+    height: 38px;
+    width: 50%;
+}
+.desktop .lg-bg .lg-input .lg-from .lg-code .code input{
+    width: 50%;
+}
+.lg-btn{
+    background-color: #fff;
+    margin-top: 1em;
+    color: #555;
+}
+@media (max-width :990px) {
+    .desktop .lg-bg{
+        width: 33%;
+    }
+}
+@media (max-width: 768px) {
+    .desktop .lg-bg{
+        width: 100%;
+        padding: 2em 2em;
+    }
+}

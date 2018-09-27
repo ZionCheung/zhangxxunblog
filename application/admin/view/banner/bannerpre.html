@@ -1,0 +1,31 @@
+{include file="public/header"}
+
+<body>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>{$bannerName}(页面)轮播预览</legend>
+    </fieldset>
+    <div class="layui-carousel" id="bannerpre" style="margin:0 auto;">
+        <div carousel-item="">
+            {volist name="banner" id="vo" empty="该模块没有添加轮播"}
+            <div><a href="{$vo.banner_link}" target="_block"><img src="{$vo.banner_route}"></a></div>
+            {/volist}
+        </div>
+    </div>
+
+    <script>
+        layui.use(['carousel', 'form'], function () {
+            var carousel = layui.carousel
+                , form = layui.form;
+            //图片轮播
+            carousel.render({
+                elem: '#bannerpre'
+                , width: '1170px'
+                , height: '480px'
+                , interval: 5000
+            });
+        });
+    </script>
+
+</body>
+
+</html>
