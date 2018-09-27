@@ -396,7 +396,7 @@ class Article extends Model
      */
     public static function getBloggerArticle()
     {
-        $articleId = self::field('id')->order('article_like', 'desc')->limit(20)->select();
+        $articleId = self::where('article_sign', 'eq', 1)->field('id')->order('article_like', 'desc')->limit(20)->select();
         $articleData = [];
         foreach ($articleId as $v) {
             $articleData[] = join('', $v->toArray());
@@ -415,15 +415,20 @@ class Article extends Model
         }
         return $newArticleData;
     }
+    /**
+     * 优选文章
+     *
+     * @return void
+     */
     public static function getOptimizationArticle()
     {
-        $article = self::field('id,article_serial,article_name,article_cover')
+        $article = self::where('article_sign', 'eq', 1)->field('id,article_serial,article_name,article_cover')
             ->order('article_click', 'desc')
             ->limit(12)
             ->select();
         $articleData = [];
         foreach ($article as $v) {
-            $articleData [] = $v ->toArray();
+            $articleData[] = $v->toArray();
         }
         return $articleData;
     }

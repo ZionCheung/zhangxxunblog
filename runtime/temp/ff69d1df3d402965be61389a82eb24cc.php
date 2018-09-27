@@ -1,4 +1,22 @@
-{include file="public/header"}
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"E:\www\zhangxxunblog\public/../application/admin\view\banner\addbanner.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>zhangxxun</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="/static/admin/css/font.css">
+  <link rel="stylesheet" href="/static/admin/css/xadmin.css">
+  <link rel="stylesheet" href="/static/admin/css/adminpub.css">
+  <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/zoomify.css">
+  <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/static/admin/lib/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/static/admin/js/xadmin.js"></script>
+  <script type="text/javascript" src="/static/js/zoomify.js"></script>
+</head>
 
 <body>
     <div class="x-nav">
@@ -17,7 +35,7 @@
         </div>
         <div class="layui-upload-drag" id="uploadimg">
             <i class="layui-icon"></i>
-            <p>点击或将图片拖拽于本区域(仅支持jpg/jpeg/png)图片格式,若对图片不满意继续添加即可覆盖</p>
+            <p>点击或将图片拖拽于本区域(仅支持jpg/jpeg)图片格式,若对图片不满意继续添加即可覆盖</p>
         </div>
     </div>
     <div class="x-body" style="display:flex;justify-content:center;">
@@ -40,9 +58,9 @@
                 </label>
                 <div class="layui-input-inline">
                     <select name="bcate" id="bcate">
-                        {volist name="cate" id="vo" empty="数据暂时为空"}
-                        <option value="{$vo.id}">{$vo.cate_name}</option>
-                        {/volist}
+                        <?php if(is_array($cate) || $cate instanceof \think\Collection || $cate instanceof \think\Paginator): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "数据暂时为空" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                        <option value="<?php echo $vo['id']; ?>"><?php echo $vo['cate_name']; ?></option>
+                        <?php endforeach; endif; else: echo "数据暂时为空" ;endif; ?>
                     </select>
                 </div>
                 <div class="layui-form-mid layui-word-aux">
@@ -85,18 +103,18 @@
             //图片上传
             var uploadInst = upload.render({
                 elem: '#uploadimg'
-                , url: "{:url('admin/banner/addBannerImgHandle')}"
+                , url: "<?php echo url('admin/banner/addBannerImgHandle'); ?>"
                 , data: {
                     imgRoute: function () {
                         return $('#imgpre').attr('src');
                     }
                 }
                 , accept: 'images' //普通文件
-                , exts: 'jpg|jpeg|png' //上传文件后缀名
+                , exts: 'jpg|jpeg' //上传文件后缀名
                 , done: function (response) {
                     if (response.errno == 0) {
                         $('.banner-img').fadeIn(500);
-                        $('#imgpre').attr('src', "__STATIC__/upload/banner/" + response.imgName);
+                        $('#imgpre').attr('src', "/static/upload/banner/" + response.imgName);
                     }
                 }
                 , error: function () {
@@ -115,7 +133,7 @@
                 if (imgRoute.length != 0) {
                     $.ajax({
                         type: 'POST',
-                        url: "{:url('admin/banner/bannerImg')}",
+                        url: "<?php echo url('admin/banner/bannerImg'); ?>",
                         data: { 'imgRoute': imgRoute },
                         success: function (response) {
                         },
@@ -137,7 +155,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "{:url('admin/banner/addBannerHandle')}",
+                url: "<?php echo url('admin/banner/addBannerHandle'); ?>",
                 data: {
                     'link': data['bLink'],
                     'cate': data['bCate'],

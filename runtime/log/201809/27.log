@@ -16193,3 +16193,181 @@
 [ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000274s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009861s ]
 [ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000476s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:12:18+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001469s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.010269s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.009200s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.011241s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.010829s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:12:49+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001233s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008185s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008913s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.011734s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.012890s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000449s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:15:28+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003226s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009869s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008369s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009162s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000162s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.011554s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000458s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:15:50+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001291s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008208s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.011892s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009725s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009489s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000389s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:29:38+08:00 ] 127.0.0.1 GET /heart.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003228s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.010389s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000538s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:29:54+08:00 ] 127.0.0.1 GET /noisylife.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001705s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.010859s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000427s ]
+---------------------------------------------------------------
+[ 2018-09-27T15:30:00+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002256s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008290s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.010521s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.011389s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.012089s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000344s ]
+---------------------------------------------------------------
+[ 2018-09-27T16:07:18+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002155s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008807s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008462s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.007594s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.007714s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000345s ]
+---------------------------------------------------------------
+[ 2018-09-27T16:10:50+08:00 ] 127.0.0.1 POST /loginhandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001238s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.006684s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_admin_user` WHERE  `ad_username` = 'zhangxxun'  AND `ad_password` = '3775c147bc7c86a30db52321c21b0f7f'  AND `ad_sign` = 1 LIMIT 1 [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[ 2018-09-27T16:10:50+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001217s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.007704s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000444s ]
+---------------------------------------------------------------
+[ 2018-09-27T16:10:54+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001017s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.006916s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538035854 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538035854 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.006965s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008380s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2018-09-27T16:10:55+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001005s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.006748s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007636s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000402s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:02:03+08:00 ] 127.0.0.1 GET /zhangxxun/banner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002706s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.009449s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 1 LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 1 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 3 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 3 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 4 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 4 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000274s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:02:06+08:00 ] 127.0.0.1 GET /zhangxxun/addbanner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001155s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007295s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name` FROM `zx_cate` WHERE  `cate_belong` = 0  AND `cate_banner` = 1 ORDER BY `id` ASC [ RunTime:0.000585s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:02:52+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010652s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.006962s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000346s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:03:25+08:00 ] 127.0.0.1 GET /zhangxxun/banner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001188s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.007571s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 1 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 1 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 3 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 3 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_banner` WHERE  `cid` = 4 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_banner` WHERE  `cid` = 4 ORDER BY `banner_sort` ASC LIMIT 0,10 [ RunTime:0.000227s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:03:28+08:00 ] 127.0.0.1 GET /zhangxxun/addbanner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001041s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007237s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name` FROM `zx_cate` WHERE  `cate_belong` = 0  AND `cate_banner` = 1 ORDER BY `id` ASC [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:03:37+08:00 ] 127.0.0.1 POST /zhangxxun/addbannerhandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001418s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.006793s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_banner` WHERE  `banner_route` = '/static/upload/banner/5bac9ce2a3e34.jpg' LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] INSERT INTO `zx_banner` (`banner_route` , `banner_time` , `banner_link` , `banner_desc` , `cid`) VALUES ('/static/upload/banner/5bac9ce2a3e34.jpg' , 1538039017 , '213' , '' , 4) [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:03:38+08:00 ] 127.0.0.1 GET /zhangxxun/addbanner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001006s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.006634s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name` FROM `zx_cate` WHERE  `cate_belong` = 0  AND `cate_banner` = 1 ORDER BY `id` ASC [ RunTime:0.000534s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:04:27+08:00 ] 127.0.0.1 POST /zhangxxun/addbannerhandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001013s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_banner` WHERE  `banner_route` = '/static/upload/banner/5bac9d146bd11.jpg' LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] INSERT INTO `zx_banner` (`banner_route` , `banner_time` , `banner_link` , `banner_desc` , `cid`) VALUES ('/static/upload/banner/5bac9d146bd11.jpg' , 1538039067 , '12' , '' , 1) [ RunTime:0.000283s ]
+---------------------------------------------------------------
+[ 2018-09-27T17:04:28+08:00 ] 127.0.0.1 GET /zhangxxun/addbanner.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001030s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.006613s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name` FROM `zx_cate` WHERE  `cate_belong` = 0  AND `cate_banner` = 1 ORDER BY `id` ASC [ RunTime:0.000388s ]
