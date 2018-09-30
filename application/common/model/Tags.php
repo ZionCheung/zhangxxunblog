@@ -151,7 +151,7 @@ class Tags extends Model
      */
     public static function getAllTags()
     {
-        $tags = self::field('id,tags_title,tags_color')->select();
+        $tags = self::where('tags_sign', 'eq', 1)->field('id,tags_title,tags_color')->select();
         $tagsData = [];
         foreach ($tags as $v) {
             $tagsData[] = $v->toArray();
@@ -172,6 +172,7 @@ class Tags extends Model
         foreach ($tags as $k => $v) {
             $tagsData[$k]['tags_title'] = $v->getAttr('tags_title');
             $tagsData[$k]['tags_color'] = $v->getAttr('tags_color');
+            $tagsData[$k]['tags_sign'] = $v->getAttr('tags_sign');
         }
         return $tagsData;
     }

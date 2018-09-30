@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1538106710;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -5,12 +6,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$article.article_name}_zhangxxun</title>
-	<link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
-	<link rel="stylesheet" href="__CSS__/public.css" />
-	<link rel="stylesheet" href="__CSS__/details.css" />
-	<link rel="stylesheet" href="__CSS__/font-awesome.min.css" />
-	<script src="__JS__/jquery-3.3.1.min.js"></script>
+	<title><?php echo $article['article_name']; ?>_zhangxxun</title>
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/static/css/public.css" />
+	<link rel="stylesheet" href="/static/css/details.css" />
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		window.onload = function () {
 			var img = $('img');
@@ -62,7 +63,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="{:url('index/index/index')}"><img src="__STATIC__/images/logo.png" alt=""></a>
+					<a href="<?php echo url('index/index/index'); ?>"><img src="/static/images/logo.png" alt=""></a>
 				</div>
 			</div>
 		</div>
@@ -73,36 +74,34 @@
 			<div class="row">
 				<div class="alticle col-sm-12">
 					<div class="alticle-img">
-						<img src="__STATIC__/upload/article/original/{$article.article_cover}" alt="">
+						<img src="/static/upload/article/original/<?php echo $article['article_cover']; ?>" alt="">
 						<div class="alticle-title">
-							<h3>{$article.article_name}</h3>
+							<h3><?php echo $article['article_name']; ?></h3>
 						</div>
 					</div>
 					<div class="alticle-content">
-						{$article.article_content}
+						<?php echo $article['article_content']; ?>
 					</div>
 					<div class="alticle-end">
 						<h2>End</h2>
 					</div>
 					<div class="alticle-label">
 						<h4 style="color: #009966">Label</h4>
-						{volist name="tags" id="tags" }
-						{if condition="$tags.tags_sign eq 1"}
+						<?php if(is_array($tags) || $tags instanceof \think\Collection || $tags instanceof \think\Paginator): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tags): $mod = ($i % 2 );++$i;if($tags['tags_sign'] == 1): ?>
 						<a href='' class="label-bm">
 							<span class="glyphicon glyphicon-tags" style="margin-right: 6px;"></span>
-							{$tags.tags_title}
+							<?php echo $tags['tags_title']; ?>
 						</a>
-						{/if}
-						{/volist}
+						<?php endif; endforeach; endif; else: echo "" ;endif; ?>
 					</div>
 					<div class="alticle-operation">
-						<input type="hidden" value="{$article.id}" id="aid">
+						<input type="hidden" value="<?php echo $article['id']; ?>" id="aid">
 						<ul class="alticle-list">
-							<li><i class="fa fa-user aclebox-icon"></i>{$article.article_author}</li>
-							<li><i class="fa fa-calendar aclebox-icon-blue"></i>{$article.article_time|date="Y-m-d",###}</li>
-							<li><i class="fa fa-eye aclebox-icon"></i>阅读(<b>{$article.article_click}</b>)</li>
-							<li style="cursor:pointer"><i class="fa fa-heart aclebox-icon-red"></i><a onclick="articleLike({$article.id})">我喜欢(<b
-									 id="likeNum">{$article.article_like}</b>)</a></li>
+							<li><i class="fa fa-user aclebox-icon"></i><?php echo $article['article_author']; ?></li>
+							<li><i class="fa fa-calendar aclebox-icon-blue"></i><?php echo date("Y-m-d",$article['article_time']); ?></li>
+							<li><i class="fa fa-eye aclebox-icon"></i>阅读(<b><?php echo $article['article_click']; ?></b>)</li>
+							<li style="cursor:pointer"><i class="fa fa-heart aclebox-icon-red"></i><a onclick="articleLike(<?php echo $article['id']; ?>)">我喜欢(<b
+									 id="likeNum"><?php echo $article['article_like']; ?></b>)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -123,7 +122,7 @@
 						<textarea name="" class="comment-content" rows="14" id="cmcontent" placeholder="来都来了,留下点什么吧!"></textarea>
 						<div class="comment-btn">
 							<div class="btn-look">
-								<img src="__STATIC__/images/face/1.gif">
+								<img src="/static/images/face/1.gif">
 							</div>
 							<a class="btn-comment" onclick="commentSub()">留言</a>
 						</div>
@@ -133,7 +132,7 @@
 						<!-- comment contnet li-->
 						<div class="exhi-list">
 							<div class="exhi-title">
-								<img src="__STATIC__/images/6.jpg" alt="">
+								<img src="/static/images/6.jpg" alt="">
 								<div class="exhi-text">
 									<h4>zhangxxun <span style="color: #555">重庆重庆</span></h4>
 									<p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p>
@@ -146,7 +145,7 @@
 						<!-- comment contnet li-->
 						<div class="exhi-list">
 							<div class="exhi-title">
-								<img src="__STATIC__/images/6.jpg" alt="">
+								<img src="/static/images/6.jpg" alt="">
 								<div class="exhi-text">
 									<h4>zhangxxun <span style="color: #555">重庆重庆</span></h4>
 									<p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p>
@@ -176,15 +175,15 @@
 			<p>蜀ICP备18020042号-1</p>
 		</div>
 	</footer>
-	<script src="__JS__/bootstrap.min.js"></script>
-	<script src="__JS__/jquery.qqFace.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/jquery.qqFace.js"></script>
 	<script type="text/javascript">
 		// 初始化表情
 		$(function () {
 			$('.btn-look').qqFace({
 				id: 'emoticon',
 				assign: 'cmcontent',
-				path: '__STATIC__/images/face/' //表情存放的路径
+				path: '/static/images/face/' //表情存放的路径
 			});
 		});
 		// 点击添加留言
@@ -194,7 +193,7 @@
 				alert('留言内容不能为空!');
 			} else {
 				$('.exhi-list:last').after(
-					'<div class="exhi-list"><div class="exhi-title"><img src="__STATIC__/images/6.jpg" alt=""><div class="exhi-text"><h4>zhangxxun <span style="color: #555">重庆重庆</span></h4><p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p></div></div><div class="exhi-mge"><p>' +
+					'<div class="exhi-list"><div class="exhi-title"><img src="/static/images/6.jpg" alt=""><div class="exhi-text"><h4>zhangxxun <span style="color: #555">重庆重庆</span></h4><p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p></div></div><div class="exhi-mge"><p>' +
 					replace_em(textar) + '</p></div></div>')
 				$('#cmcontent').val('');
 			}
@@ -204,7 +203,7 @@
 			str = str.replace(/\</g, '&lt;');
 			str = str.replace(/\>/g, '&gt;');
 			str = str.replace(/\n/g, '<br/>');
-			str = str.replace(/\[em_([0-9]*)\]/g, '<img src="__STATIC__/images/face/$1.gif" border="0" />');
+			str = str.replace(/\[em_([0-9]*)\]/g, '<img src="/static/images/face/$1.gif" border="0" />');
 			return str;
 		}
 	</script>
@@ -214,7 +213,7 @@
 			$.ajax({
 				type: 'post'
 				, dataType: 'json'
-				, url: "{:url('index/details/articleClick')}"
+				, url: "<?php echo url('index/details/articleClick'); ?>"
 				, data: { 'aid': aid }
 			});
 		});
@@ -223,7 +222,7 @@
 			$.ajax({
 				type: 'post'
 				, dataType: 'json'
-				, url: "{:url('index/details/articleLike')}"
+				, url: "<?php echo url('index/details/articleLike'); ?>"
 				, data: { 'id': aid }
 				, success: function (response) {
 					if (response.errno == 0) {

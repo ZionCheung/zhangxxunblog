@@ -1,0 +1,2219 @@
+---------------------------------------------------------------
+[ 2018-09-28T09:08:37+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002414s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008620s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008127s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008515s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.007122s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000263s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:16+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003241s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.011272s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008227s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008548s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.010155s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:26+08:00 ] 127.0.0.1 POST /loginhandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001376s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008687s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_admin_user` WHERE  `ad_username` = 'zhangxxun'  AND `ad_password` = '3775c147bc7c86a30db52321c21b0f7f'  AND `ad_sign` = 1 LIMIT 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:26+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001361s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008033s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000349s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:31+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001247s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009407s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008094s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000498s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:39+08:00 ] 127.0.0.1 POST /zhangxxun/articleNameValidation.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001312s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008387s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `article_name` = 'sads' LIMIT 1 [ RunTime:0.000556s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:57+08:00 ] 127.0.0.1 POST /zhangxxun/addariclehandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001558s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008304s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_serial` = '180909451371f3' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] INSERT INTO `zx_article` (`article_serial` , `article_name` , `article_cover` , `article_content` , `article_author` , `article_time` , `uid` , `cid` , `lid`) VALUES ('180909451371f3' , 'sads' , '20180928\\9b7242b85b83a79ded36e88010737f2b.jpg' , '<p><a href=\"https://gitee.com/\" target=\"_blank\" title=\"123\">asasda</a><br/></p>' , 'ZionCheung' , 1538099157 , 1 , 3 , 'on') [ RunTime:0.000504s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:45:58+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001251s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008669s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007684s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000409s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:02+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001234s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008949s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538099162 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538099162 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009011s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.007894s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` = 0 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009268s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:04+08:00 ] 127.0.0.1 GET /articlePreView/180909451371f3.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001228s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.007763s ]
+[ sql ] [ SQL ] SELECT `id`,`article_name`,`article_cover`,`article_content`,`article_author` FROM `zx_article` WHERE  `article_serial` = '180909451371f3' LIMIT 1 [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:16+08:00 ] 127.0.0.1 POST /zhangxxun/articleRecycleBin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001215s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.007992s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_recycle`=1,`article_recycle_time`=1538099176  WHERE  `id` = 1 [ RunTime:0.000581s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:18+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001205s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008063s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538099178 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538099178 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008628s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009419s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000386s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:21+08:00 ] 127.0.0.1 GET /updateuser/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001343s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008622s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000345s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:43+08:00 ] 127.0.0.1 POST /zhangxxun/updateuser.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001276s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.080895s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] UPDATE `zx_admin_user`  SET `ad_password`='3775c147bc7c86a30db52321c21b0f7f',`ad_name`='ZionCheung',`ad_headimg`='5e788a.jpeg'  WHERE  `id` = 1 [ RunTime:0.000461s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:46:45+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001225s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008409s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000414s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:51:16+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001348s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009195s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000415s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:51:21+08:00 ] 127.0.0.1 GET /zhangxxun/rule.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001233s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_auth_rule` [ RunTime:0.025432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_auth_rule` WHERE  ( `name` LIKE '%%' OR `title` LIKE '%%' ) LIMIT 1 [ RunTime:0.006696s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`status` FROM `zx_auth_rule` WHERE  ( `name` LIKE '%%' OR `title` LIKE '%%' ) LIMIT 0,8 [ RunTime:0.000584s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:51:30+08:00 ] 127.0.0.1 GET /zhangxxun/role.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001778s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_auth_group` [ RunTime:0.023666s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_auth_group` WHERE  ( `title` LIKE '%%' OR `describe` LIKE '%%' ) LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_auth_group` WHERE  ( `title` LIKE '%%' OR `describe` LIKE '%%' ) LIMIT 0,8 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_auth_rule` [ RunTime:0.009494s ]
+[ sql ] [ SQL ] SELECT `title` FROM `zx_auth_rule` WHERE  `id` IN (1,3,5) [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT `title` FROM `zx_auth_rule` WHERE  `id` IN (1,3,5,6,7,8,9) [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT `title` FROM `zx_auth_rule` WHERE  `id` IN (1,3,5,6,7) [ RunTime:0.000361s ]
+---------------------------------------------------------------
+[ 2018-09-28T09:51:32+08:00 ] 127.0.0.1 GET /zhangxxun/addrole.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001226s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_auth_rule` [ RunTime:0.008228s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `zx_auth_rule` WHERE  `status` = 1 [ RunTime:0.000426s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:04:20+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011600s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.018318s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009383s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000449s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:04:21+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001189s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538100261 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538100261 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008099s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008745s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000426s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:04:25+08:00 ] 127.0.0.1 GET /zhangxxun/articleRecycleBinList.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001270s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008283s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538100265 )  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `id`,`uid`,`article_serial`,`article_name`,`article_author`,`article_time`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538100265 )  AND `uid` LIKE 0 ORDER BY `article_recycle_time` DESC LIMIT 0,8 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009050s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000357s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:04:35+08:00 ] 127.0.0.1 POST /zhangxxun/articleDelete.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001183s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009106s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] DELETE FROM `zx_article`    WHERE  `id` = 1 [ RunTime:0.016238s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:04:36+08:00 ] 127.0.0.1 GET /zhangxxun/articleRecycleBinList.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001440s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008065s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538100276 )  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `id`,`uid`,`article_serial`,`article_name`,`article_author`,`article_time`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538100276 )  AND `uid` LIKE 0 ORDER BY `article_recycle_time` DESC LIMIT 0,8 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008579s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000347s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:05:22+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001231s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.007872s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000490s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:05:24+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001194s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008249s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000403s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:05:29+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001217s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.013319s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:06:47+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001360s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009859s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000463s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:06:49+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001218s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008219s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000434s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:10:04+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001357s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009278s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000423s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:10:25+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001265s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009533s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000415s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:11:17+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011543s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008328s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.009811s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008294s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008419s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2018-09-28T10:52:08+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002597s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008860s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008169s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008278s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008432s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` [ RunTime:0.000312s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:14+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002678s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009968s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008981s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.010946s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009846s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000430s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:21+08:00 ] 127.0.0.1 POST /loginhandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001290s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009393s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_admin_user` WHERE  `ad_username` = 'zhangxxun'  AND `ad_password` = '3775c147bc7c86a30db52321c21b0f7f'  AND `ad_sign` = 1 LIMIT 1 [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:21+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001303s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008977s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:25+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011445s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008901s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105605 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105605 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008928s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009827s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000350s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:26+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001226s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008454s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008250s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:32+08:00 ] 127.0.0.1 GET /zhangxxun/tags.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001236s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009687s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) LIMIT 1 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) ORDER BY `tags_sort` ASC LIMIT 0,10 [ RunTime:0.000533s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:34+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001291s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008943s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000393s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:46+08:00 ] 127.0.0.1 GET /zhangxxun/articleRecycleBinList.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001704s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008080s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538105626 )  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT `id`,`uid`,`article_serial`,`article_name`,`article_author`,`article_time`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 1  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_recycle_time` >= 0 AND `article_recycle_time` <= 1538105626 )  AND `uid` LIKE 0 ORDER BY `article_recycle_time` DESC LIMIT 0,8 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009706s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000355s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:47+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001216s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008843s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105627 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105627 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009179s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008777s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000485s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:48+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001261s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008073s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008959s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000423s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:53+08:00 ] 127.0.0.1 POST /zhangxxun/articleNameValidation.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001222s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008907s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `article_name` = '驱蚊器翁' LIMIT 1 [ RunTime:0.000443s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:57+08:00 ] 127.0.0.1 POST /zhangxxun/addariclehandle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001481s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009759s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] INSERT INTO `zx_article` (`article_serial` , `article_name` , `article_cover` , `article_content` , `article_author` , `article_time` , `uid` , `cid` , `lid`) VALUES ('18091133130507' , '驱蚊器翁' , '20180928\\1da18466c19acb2e1dc9ff356fd379e0.jpg' , '<p>请问萨达萨达奥斯as</p>' , 'ZionCheung' , 1538105637 , 1 , 3 , '1,2,3,4,5,6,7') [ RunTime:0.000457s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:33:58+08:00 ] 127.0.0.1 GET /zhangxxun/addarticle.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001225s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008565s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008091s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000450s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:34:03+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001305s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008803s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105643 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105643 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008963s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000418s ]
+[ error ] [0]method not exist:think\db\Query->all
+---------------------------------------------------------------
+[ 2018-09-28T11:34:25+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ info ] 127.0.0.1/zhangxxun.html [运行时间：0.049852s][吞吐率：20.06req/s] [内存消耗：2,438.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\www\zhangxxunblog\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000772s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008783s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000510s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:34:25+08:00 ] 127.0.0.1 GET /zhangxxun/home.html
+[ info ] 127.0.0.1/zhangxxun/home.html [运行时间：0.043445s][吞吐率：23.02req/s] [内存消耗：1,482.23kb] [文件加载：42]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'home',
+    2 => 'home',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Home->home[ E:\www\zhangxxunblog\application\admin\controller\Home.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'homeInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:34:27+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.065592s][吞吐率：15.25req/s] [内存消耗：2,664.02kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000673s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008220s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105667 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105667 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008201s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000417s ]
+[ error ] [0]method not exist:think\db\Query->all[E:\www\zhangxxunblog\thinkphp\library\think\db\Query.php:96]
+---------------------------------------------------------------
+[ 2018-09-28T11:34:35+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ info ] 127.0.0.1/zhangxxun.html [运行时间：0.049873s][吞吐率：20.05req/s] [内存消耗：2,438.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\www\zhangxxunblog\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008537s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000453s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:34:35+08:00 ] 127.0.0.1 GET /zhangxxun/home.html
+[ info ] 127.0.0.1/zhangxxun/home.html [运行时间：0.038312s][吞吐率：26.10req/s] [内存消耗：1,482.23kb] [文件加载：42]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'home',
+    2 => 'home',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Home->home[ E:\www\zhangxxunblog\application\admin\controller\Home.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'homeInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:34:38+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.084998s][吞吐率：11.76req/s] [内存消耗：2,752.42kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000755s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008076s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105678 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105678 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008550s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009452s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.007959s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:36:32+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.090902s][吞吐率：11.00req/s] [内存消耗：2,768.49kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/article.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000881s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008310s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105791 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105791 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008949s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008681s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008511s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000374s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:36:44+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ info ] 127.0.0.1/zhangxxun.html [运行时间：0.049834s][吞吐率：20.07req/s] [内存消耗：2,438.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\www\zhangxxunblog\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009801s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000374s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:36:44+08:00 ] 127.0.0.1 GET /zhangxxun/home.html
+[ info ] 127.0.0.1/zhangxxun/home.html [运行时间：0.040315s][吞吐率：24.80req/s] [内存消耗：1,482.23kb] [文件加载：42]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'home',
+    2 => 'home',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Home->home[ E:\www\zhangxxunblog\application\admin\controller\Home.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'homeInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:36:46+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.086611s][吞吐率：11.55req/s] [内存消耗：2,753.05kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000700s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.010072s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105806 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105806 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.010312s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008316s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008971s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:37:48+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ info ] 127.0.0.1/zhangxxun.html [运行时间：0.047518s][吞吐率：21.04req/s] [内存消耗：2,438.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\www\zhangxxunblog\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000964s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009283s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:37:48+08:00 ] 127.0.0.1 GET /zhangxxun/home.html
+[ info ] 127.0.0.1/zhangxxun/home.html [运行时间：0.041952s][吞吐率：23.84req/s] [内存消耗：1,482.23kb] [文件加载：42]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'home',
+    2 => 'home',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Home->home[ E:\www\zhangxxunblog\application\admin\controller\Home.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'homeInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:37:50+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.087115s][吞吐率：11.48req/s] [内存消耗：2,753.47kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001171s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008440s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105870 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538105870 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000994s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008347s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.010058s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000455s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:30+08:00 ] 127.0.0.1 GET /zhangxxun.html
+[ info ] 127.0.0.1/zhangxxun.html [运行时间：0.052893s][吞吐率：18.91req/s] [内存消耗：2,438.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\www\zhangxxunblog\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001057s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.008194s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000458s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:30+08:00 ] 127.0.0.1 GET /zhangxxun/home.html
+[ info ] 127.0.0.1/zhangxxun/home.html [运行时间：0.040912s][吞吐率：24.44req/s] [内存消耗：1,482.23kb] [文件加载：42]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'home',
+    2 => 'home',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Home->home[ E:\www\zhangxxunblog\application\admin\controller\Home.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'homeInfo',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:40:33+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.087042s][吞吐率：11.49req/s] [内存消耗：2,753.47kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009349s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538106033 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538106033 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008685s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009378s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.010194s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000357s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:38+08:00 ] 127.0.0.1 GET /
+[ info ] 127.0.0.1/ [运行时间：0.081291s][吞吐率：12.30req/s] [内存消耗：2,600.14kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\www\zhangxxunblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\index.html [ array (
+  0 => 'cate',
+  1 => 'tags',
+  2 => 'article',
+  3 => 'banner',
+  4 => 'recommend',
+  5 => 'optimization',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000793s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007959s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.008994s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008128s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009410s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000376s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:44+08:00 ] 127.0.0.1 POST /zhangxxun/articleSign.html
+[ info ] 127.0.0.1/zhangxxun/articleSign.html [运行时间：0.049442s][吞吐率：20.23req/s] [内存消耗：2,526.31kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'articleSign',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/article.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '4',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->articleSign[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000741s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008750s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_sign`=1  WHERE  `id` = 2 [ RunTime:0.000472s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:45+08:00 ] 127.0.0.1 GET /zhangxxun/article.html
+[ info ] 127.0.0.1/zhangxxun/article.html [运行时间：0.085397s][吞吐率：11.71req/s] [内存消耗：2,753.35kb] [文件加载：59]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'article',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/article.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->article[ E:\www\zhangxxunblog\application\admin\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\article\article.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'article',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000667s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008167s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538106044 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 LIMIT 1 [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_author`,`article_time`,`article_like`,`article_click`,`article_sign`,`article_sort`,`uid`,`cid`,`lid`,`article_recycle`,`article_recycle_time` FROM `zx_article` WHERE  `article_recycle` = 0  AND ( `article_serial` LIKE '%%' OR `article_name` LIKE '%%' )  AND ( `article_time` >= 0 AND `article_time` <= 1538106044 )  AND `article_sign` LIKE 0  AND `cid` LIKE 0  AND `uid` LIKE 0 ORDER BY `article_sort` ASC LIMIT 0,8 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008116s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009809s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_admin_user` [ RunTime:0.010348s ]
+[ sql ] [ SQL ] SELECT `ad_username`,`ad_headimg`,`ad_name`,`ad_password` FROM `zx_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_cate` WHERE  `cate_article` = 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT `id`,`ad_name` FROM `zx_admin_user` WHERE  `ad_sign` = 1 ORDER BY `id` ASC [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:47+08:00 ] 127.0.0.1 GET /
+[ info ] 127.0.0.1/ [运行时间：0.083661s][吞吐率：11.95req/s] [内存消耗：2,604.55kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\www\zhangxxunblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\index.html [ array (
+  0 => 'cate',
+  1 => 'tags',
+  2 => 'article',
+  3 => 'banner',
+  4 => 'recommend',
+  5 => 'optimization',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000712s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008733s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.010640s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009534s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` IN (2) [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009493s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000408s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:49+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.069458s][吞吐率：14.40req/s] [内存消耗：2,688.03kb] [文件加载：55]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000709s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008289s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008103s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009302s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000444s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:40:49+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.028281s][吞吐率：35.36req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:40:49+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.027081s][吞吐率：36.93req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:40:58+08:00 ] 127.0.0.1 GET /zhangxxun/tags.html
+[ info ] 127.0.0.1/zhangxxun/tags.html [运行时间：0.057069s][吞吐率：17.52req/s] [内存消耗：2,569.24kb] [文件加载：56]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tags',
+    2 => 'tags',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tags->tags[ E:\www\zhangxxunblog\application\admin\controller\Tags.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\tags\tags.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001454s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008793s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) ORDER BY `tags_sort` ASC LIMIT 0,10 [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:00+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.060218s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000675s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009240s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008696s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=1  WHERE  `id` = 2 [ RunTime:0.000432s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:02+08:00 ] 127.0.0.1 POST /zhangxxun/tagssign.html
+[ info ] 127.0.0.1/zhangxxun/tagssign.html [运行时间：0.047089s][吞吐率：21.24req/s] [内存消耗：2,469.51kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tags',
+    2 => 'tagssign',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/tags.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '4',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tags->tagsSign[ E:\www\zhangxxunblog\application\admin\controller\Tags.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000765s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008811s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000406s ]
+[ sql ] [ SQL ] UPDATE `zx_tags`  SET `tags_sign`=0  WHERE  `id` = 7 [ RunTime:0.000465s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:03+08:00 ] 127.0.0.1 GET /zhangxxun/tags.html
+[ info ] 127.0.0.1/zhangxxun/tags.html [运行时间：0.050406s][吞吐率：19.84req/s] [内存消耗：2,569.21kb] [文件加载：56]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tags',
+    2 => 'tags',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/tags.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tags->tags[ E:\www\zhangxxunblog\application\admin\controller\Tags.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\tags\tags.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000718s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009235s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) ORDER BY `tags_sort` ASC LIMIT 0,10 [ RunTime:0.000376s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:06+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.068447s][吞吐率：14.61req/s] [内存消耗：2,558.60kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000665s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008687s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008722s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.010002s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000421s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:06+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.027082s][吞吐率：36.92req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:41:06+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.032848s][吞吐率：30.44req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:41:16+08:00 ] 127.0.0.1 POST /zhangxxun/tagssign.html
+[ info ] 127.0.0.1/zhangxxun/tagssign.html [运行时间：0.063229s][吞吐率：15.82req/s] [内存消耗：2,469.59kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tags',
+    2 => 'tagssign',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/tags.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '4',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tags->tagsSign[ E:\www\zhangxxunblog\application\admin\controller\Tags.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002544s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.010802s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] UPDATE `zx_tags`  SET `tags_sign`=1  WHERE  `id` = 7 [ RunTime:0.000610s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:17+08:00 ] 127.0.0.1 GET /zhangxxun/tags.html
+[ info ] 127.0.0.1/zhangxxun/tags.html [运行时间：0.059634s][吞吐率：16.77req/s] [内存消耗：2,569.21kb] [文件加载：56]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tags',
+    2 => 'tags',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/zhangxxun/tags.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tags->tags[ E:\www\zhangxxunblog\application\admin\controller\Tags.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/admin\view\tags\tags.html [ array (
+  0 => 'userId',
+  1 => 'username',
+  2 => 'name',
+  3 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010716s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008132s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  ( `tags_title` LIKE '%%' OR `tags_desc` LIKE '%%' ) ORDER BY `tags_sort` ASC LIMIT 0,10 [ RunTime:0.000535s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:17+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.087978s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.039739s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009675s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=2  WHERE  `id` = 2 [ RunTime:0.000404s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:22+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.155177s][吞吐率：6.44req/s] [内存消耗：2,558.63kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008376s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.063619s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.043445s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000444s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:41:22+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.026537s][吞吐率：37.68req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:41:22+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.036881s][吞吐率：27.11req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:41:32+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.071605s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000609s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.007981s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008378s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=3  WHERE  `id` = 2 [ RunTime:0.000422s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:42:55+08:00 ] 127.0.0.1 GET /
+[ info ] 127.0.0.1/ [运行时间：0.128007s][吞吐率：7.81req/s] [内存消耗：2,604.17kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\www\zhangxxunblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\index.html [ array (
+  0 => 'cate',
+  1 => 'tags',
+  2 => 'article',
+  3 => 'banner',
+  4 => 'recommend',
+  5 => 'optimization',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001142s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.011958s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.012066s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.013085s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` IN (2) [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.013245s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000613s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:42:57+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.068332s][吞吐率：14.63req/s] [内存消耗：2,558.41kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000689s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008844s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009168s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009351s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000404s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:42:58+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.024759s][吞吐率：40.39req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:42:58+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.033492s][吞吐率：29.86req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:43:08+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.061249s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000579s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.009298s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008966s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=4  WHERE  `id` = 2 [ RunTime:0.000428s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:43:44+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.084004s][吞吐率：11.90req/s] [内存消耗：2,688.06kb] [文件加载：55]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000752s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.012877s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009730s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.009180s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000583s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:43:45+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.031064s][吞吐率：32.19req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:43:45+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.041913s][吞吐率：23.86req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:43:55+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.081088s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000779s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.011245s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009403s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=5  WHERE  `id` = 2 [ RunTime:0.000510s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:51:54+08:00 ] 127.0.0.1 GET /
+[ info ] 127.0.0.1/ [运行时间：0.140001s][吞吐率：7.14req/s] [内存消耗：2,604.04kb] [文件加载：54]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\www\zhangxxunblog\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\index.html [ array (
+  0 => 'cate',
+  1 => 'tags',
+  2 => 'article',
+  3 => 'banner',
+  4 => 'recommend',
+  5 => 'optimization',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002018s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.015580s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_banner` [ RunTime:0.015541s ]
+[ sql ] [ SQL ] SELECT `banner_route`,`banner_link` FROM `zx_banner` WHERE  `cid` = 1  AND `banner_sign` = 1 ORDER BY `banner_sort` ASC [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.017583s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_time`,`article_like`,`article_click`,`cid` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_time` DESC LIMIT 10 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT `id` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_like` DESC LIMIT 20 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` IN (2) [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover` FROM `zx_article` WHERE  `article_sign` = 1 ORDER BY `article_click` DESC LIMIT 12 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_english_name` FROM `zx_cate` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.014073s ]
+[ sql ] [ SQL ] SELECT `id`,`tags_title`,`tags_color` FROM `zx_tags` WHERE  `tags_sign` = 1 [ RunTime:0.000471s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:51:55+08:00 ] 127.0.0.1 GET /article/heart/180911331305072.html
+[ info ] 127.0.0.1/article/heart/180911331305072.html [运行时间：0.092596s][吞吐率：10.80req/s] [内存消耗：2,687.80kb] [文件加载：55]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'details',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'cate' => 'heart',
+  'serial' => '180911331305072',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->details[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ VIEW ] E:\www\zhangxxunblog\public/../application/index\view\home\details.html [ array (
+  0 => 'cate',
+  1 => 'article',
+  2 => 'tags',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000667s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.025434s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.009814s ]
+[ sql ] [ SQL ] SELECT `id`,`article_serial`,`article_name`,`article_cover`,`article_content`,`article_author`,`article_time`,`article_like`,`article_click`,`uid`,`lid` FROM `zx_article` WHERE  `id` = 2  AND `article_serial` = '18091133130507' LIMIT 1 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_tags` [ RunTime:0.008468s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_tags` WHERE  `id` IN (1,2,3,4,5,6,7) [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2018-09-28T11:51:55+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.026811s][吞吐率：37.30req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:51:55+08:00 ] 127.0.0.1 GET /static/images/6.jpg
+[ info ] 127.0.0.1/static/images/6.jpg [运行时间：0.032224s][吞吐率：31.03req/s] [内存消耗：1,245.77kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-28T11:52:06+08:00 ] 127.0.0.1 POST /article/click.html
+[ info ] 127.0.0.1/article/click.html [运行时间：10.056227s][吞吐率：0.10req/s] [内存消耗：2,513.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'details',
+    2 => 'articleClick',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_b393d153aeb26b46e9431fabaf0f6190=1536054508,1536055241,1536108328,1536109095; PHPSESSID=sjqu0qjmogs9ue3ga6aaou2b37',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/article/heart/180911331305072.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '5',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'aid' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Details->articleClick[ E:\www\zhangxxunblog\application\index\controller\Details.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000740s ] mysql:host=127.0.0.1;dbname=zxxblog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_cate` [ RunTime:0.008296s ]
+[ sql ] [ SQL ] SELECT `id`,`cate_name`,`cate_link`,`cate_belong` FROM `zx_cate` ORDER BY `cate_sort` ASC [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zx_article` [ RunTime:0.008270s ]
+[ sql ] [ SQL ] SELECT * FROM `zx_article` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] UPDATE `zx_article`  SET `article_click`=6  WHERE  `id` = 2 [ RunTime:0.000855s ]

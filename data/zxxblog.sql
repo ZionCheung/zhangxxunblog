@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version: 5.5.53)
-# Date: 2018-09-27 11:37:20
+# Date: 2018-09-30 08:58:28
 # Generator: MySQL-Front 5.3  (Build 4.234)
 
 /*!40101 SET NAMES utf8 */;
@@ -30,7 +30,7 @@ CREATE TABLE `zx_admin_user` (
 #
 
 /*!40000 ALTER TABLE `zx_admin_user` DISABLE KEYS */;
-INSERT INTO `zx_admin_user` VALUES (1,'zhangxxun','3775c147bc7c86a30db52321c21b0f7f','zhangxunxun1314@outlook.com',1,'c87777.jpeg','ZionCheung',0,'13650502554','',1);
+INSERT INTO `zx_admin_user` VALUES (1,'zhangxxun','3775c147bc7c86a30db52321c21b0f7f','zhangxunxun1314@outlook.com',1,'5e788a.jpeg','ZionCheung',0,'13650502554','',1);
 /*!40000 ALTER TABLE `zx_admin_user` ENABLE KEYS */;
 
 #
@@ -58,13 +58,14 @@ CREATE TABLE `zx_article` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `article_name` (`article_name`),
   UNIQUE KEY `article_serial` (`article_serial`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "zx_article"
 #
 
 /*!40000 ALTER TABLE `zx_article` DISABLE KEYS */;
+INSERT INTO `zx_article` VALUES (2,'18091133130507','驱蚊器翁','20180928\\1da18466c19acb2e1dc9ff356fd379e0.jpg','<p>请问萨达萨达奥斯as</p>','ZionCheung',1538105637,0,6,1,0,1,3,'1,2,3,4,5,6,7',0,0);
 /*!40000 ALTER TABLE `zx_article` ENABLE KEYS */;
 
 #
@@ -176,13 +177,14 @@ CREATE TABLE `zx_banner` (
   `banner_sort` int(11) NOT NULL DEFAULT '100',
   PRIMARY KEY (`id`),
   UNIQUE KEY `banner_route` (`banner_route`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "zx_banner"
 #
 
 /*!40000 ALTER TABLE `zx_banner` DISABLE KEYS */;
+INSERT INTO `zx_banner` VALUES (1,'/static/upload/banner/5bac9ce2a3e34.jpg',1538039017,'213','',4,0,100),(2,'/static/upload/banner/5bac9d146bd11.jpg',1538039067,'12','',1,0,100);
 /*!40000 ALTER TABLE `zx_banner` ENABLE KEYS */;
 
 #

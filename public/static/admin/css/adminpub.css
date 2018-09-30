@@ -121,9 +121,11 @@
     color: #ffffff;
     margin-right: 2px;
 }
-.btn-edit-lock:hover{
+
+.btn-edit-lock:hover {
     color: #fff;
 }
+
 .btn-detele:hover,
 .btn-edit:hover {
     box-shadow: 1px 1px 4spx #ffffff inset;
@@ -139,46 +141,53 @@
 .btn-edit:hover {
     color: #fa4f00;
 }
-.banner-box{
+
+.banner-box {
     text-align: center;
     position: relative;
     margin-top: 20px;
     border-bottom: solid 2px #009900;
     padding-bottom: 12px;
 }
-.banner-box .banner-img{
+
+.banner-box .banner-img {
     width: 1170px;
     height: 480px;
     overflow: hidden;
-    margin:  0 auto;
+    margin: 0 auto;
     margin-bottom: 8px;
     display: none;
 }
-.banner-box .article-img{
+
+.banner-box .article-img {
     width: 1170px;
     height: 520px;
     overflow: hidden;
-    margin:  0 auto;
+    margin: 0 auto;
     margin-bottom: 8px;
     display: none;
 }
+
 .banner-box .article-img img,
-.banner-box .banner-img img{
+.banner-box .banner-img img {
     width: 100%;
 }
+
 article .imgbox {
     height: 520px;
     width: 1170px;
     margin: 0 auto;
     overflow: hidden;
 }
+
 article .pretitle {
     text-align: center;
     margin-top: 20px;
     color: #413d3b;
     margin-bottom: 8px;
 }
-article .content{
+
+article .content {
     width: 1170px;
     padding: 8px 12px;
     margin: 0 auto;
@@ -188,6 +197,11 @@ article .content{
     overflow: hidden;
     margin-bottom: 20px;
 }
+
 article .content img {
     max-width: 90%;
+}
+
+#edui-link-Jtarget {
+    display: inline-block;
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"E:\www\zhangxxunblog\public/../application/admin\view\admin\home.html";i:1538103087;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -21,14 +21,15 @@
 <body>
     <div class="x-body layui-anim">
         <blockquote class="layui-elem-quote">欢迎管理员：
-            <span class="x-red"><?php echo $name; ?></span>！当前时间:<b id="webtime">正在获取当前时间</b></blockquote>
+            <span class="x-red"><?php echo $name; ?></span>！当前时间:<b id="webtime" style="color:#009688;">正在获取当前时间</b></blockquote>
         <fieldset class="layui-elem-field">
             <legend>数据统计</legend>
             <div class="layui-field-box">
                 <div class="layui-col-md12">
                     <div class="layui-card">
                         <div class="layui-card-body">
-                            <div class="layui-carousel x-admin-carousel x-admin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 90px;">
+                            <div class="layui-carousel x-admin-carousel x-admin-backlog" lay-anim="" lay-indicator="inside"
+                                lay-arrow="none" style="width: 100%; height: 90px;">
                                 <div carousel-item="">
                                     <ul class="layui-row layui-col-space10 layui-this">
                                         <li class="layui-col-xs2">
@@ -227,6 +228,7 @@
                     case 7:
                     case 8:
                     case 9:
+                    case 10:
                         authorMsg = '早上好,愿你有幸福的一天!';
                         break;
                     case 11:
