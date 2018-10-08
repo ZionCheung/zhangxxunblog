@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\www\zhangxxunblog\public/../application/admin\view\admin\index.html";i:1538968185;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -50,7 +50,7 @@
                 <a href="javascript:;"><?php echo $user['ad_name']; ?></a>
                 <dl class="layui-nav-child">
                     <!-- 二级菜单 -->
-                    <dd><a onclick="x_admin_show('个人信息','<?php echo url('admin/adminuser/updateUser',['uid' => $userId]); ?>')">个人信息</a></dd>
+                    <dd><a onclick="x_admin_show('个人信息','<?php echo url('admin/Adminuser/updateUser',['uid' => $userId]); ?>')">个人信息</a></dd>
                     <dd><a onclick="x_admin_show('切换帐号','<?php echo url('admin/login/login'); ?>')">切换帐号</a></dd>
                     <dd><a href="<?php echo url('admin/index/loginout'); ?>">退出</a></dd>
                 </dl>

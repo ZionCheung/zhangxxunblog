@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"E:\www\zhangxxunblog\public/../application/admin\view\rule\rule.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"E:\www\zhangxxunblog\public/../application/admin\view\rule\rule.html";i:1538965427;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +26,7 @@
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
       title="刷新">
-      <i class="layui-icon" style="line-height:30px; display: block; padding-top: 4px">ဂ</i></a>
+      <i class="fa fa-refresh" style="line-height:30px; display: block; padding-top: 4px"></i></a>
   </div>
   <div class="x-body">
     <div class="layui-row">
@@ -53,7 +53,7 @@
           <th>操作</th>
       </thead>
       <tbody>
-        <?php if(is_array($ruleInfo['data']) || $ruleInfo['data'] instanceof \think\Collection || $ruleInfo['data'] instanceof \think\Paginator): $i = 0; $__LIST__ = $ruleInfo['data'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+        <?php if(is_array($ruleInfo['data']) || $ruleInfo['data'] instanceof \think\Collection || $ruleInfo['data'] instanceof \think\Paginator): $i = 0; $__LIST__ = $ruleInfo['data'];if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
         <tr>
           <td>
             <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='<?php echo $vo['id']; ?>'><i class="layui-icon">&#xe605;</i></div>
@@ -74,7 +74,7 @@
             </a>
           </td>
         </tr>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
       </tbody>
     </table>
     <div class="page">
@@ -85,20 +85,6 @@
 
   </div>
   <script type="text/javascript">
-    layui.use('laydate', function () {
-      var laydate = layui.laydate;
-
-      //执行一个laydate实例
-      laydate.render({
-        elem: '#start' //指定元素
-      });
-
-      //执行一个laydate实例
-      laydate.render({
-        elem: '#end' //指定元素
-      });
-    });
-
     /*-删除单个*/
     function member_del(obj, id) {
       layer.confirm('确认要删除吗？', function (index) {

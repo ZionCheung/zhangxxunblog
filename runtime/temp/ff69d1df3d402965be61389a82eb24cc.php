@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"E:\www\zhangxxunblog\public/../application/admin\view\banner\addbanner.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"E:\www\zhangxxunblog\public/../application/admin\view\banner\addbanner.html";i:1538964518;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +35,7 @@
         </div>
         <div class="layui-upload-drag" id="uploadimg">
             <i class="layui-icon"></i>
-            <p>点击或将图片拖拽于本区域(仅支持jpg/jpeg)图片格式,若对图片不满意继续添加即可覆盖</p>
+            <p>点击或将图片拖拽于本区域(仅支持jpg/jpeg/png)图片格式,若对图片不满意继续添加即可覆盖</p>
         </div>
     </div>
     <div class="x-body" style="display:flex;justify-content:center;">
@@ -110,7 +110,7 @@
                     }
                 }
                 , accept: 'images' //普通文件
-                , exts: 'jpg|jpeg' //上传文件后缀名
+                , exts: 'jpg|jpeg|png' //上传文件后缀名
                 , done: function (response) {
                     if (response.errno == 0) {
                         $('.banner-img').fadeIn(500);

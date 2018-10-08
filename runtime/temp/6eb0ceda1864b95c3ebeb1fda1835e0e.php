@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\www\zhangxxunblog\public/../application/index\view\home\noisylife.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\www\zhangxxunblog\public/../application/index\view\home\noisylife.html";i:1538987878;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,21 +99,13 @@
                 <div class="banner-box col-sm-12">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            <?php if(is_array($banner) || $banner instanceof \think\Collection || $banner instanceof \think\Paginator): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$lifeBanner): $mod = ($i % 2 );++$i;?>
                             <div class="swiper-slide">
-                                <a href="details.html">
-                                    <img src="/static/images/1.jfif" alt="">
+                                <a href="<?php echo $lifeBanner['banner_link']; ?>">
+                                    <img src="<?php echo $lifeBanner['banner_route']; ?>" alt="<?php echo $lifeBanner['banner_desc']; ?>">
                                 </a>
                             </div>
-                            <div class="swiper-slide">
-                                <a href="details.html">
-                                    <img src="/static/images/2.jfif" alt="">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="details.html">
-                                    <img src="/static/images/3.jfif" alt="">
-                                </a>
-                            </div>
+                            <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -133,254 +125,30 @@
                     <!-- content box -->
                     <div class="box-content">
                         <!-- content li -->
+                        <?php if(is_array($article) || $article instanceof \think\Collection || $article instanceof \think\Paginator): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$article): $mod = ($i % 2 );++$i;?>
                         <div class="content">
                             <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
+                                <a href="<?php echo url('index/details/details',['cate'=>'noisylife','serial' => $article['article_serial'].$article['id']]); ?>"><img
+                                        src="/static/upload/article/thumb/<?php echo $article['article_cover']; ?>" alt=""></a>
                             </div>
                             <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
+                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i><?php echo date("Y-m-d",$article['article_time']); ?></p>
+                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(<?php echo $article['article_like']; ?>)</p>
                             </div>
                             <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
+                                <a href="<?php echo url('index/details/details',['cate'=>'noisylife','serial' => $article['article_serial'].$article['id']]); ?>">
+                                    <h4><?php echo $article['article_name']; ?></h4>
                                 </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
+                                <p><?php echo $article['introduction']; ?></p>
                             </div>
                             <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
+                                <a href="<?php echo url('index/details/details',['cate'=>'noisylife','serial' => $article['article_serial'].$article['id']]); ?>">查看全文>>></a>
                             </div>
                         </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
-                        <!-- content li -->
-                        <div class="content">
-                            <div class="content-img">
-                                <a href="details.html"><img src="/static/images/1.jfif" alt=""></a>
-                            </div>
-                            <div class="content-label">
-                                <p class="label-time"><i class="fa fa-calendar aclebox-icon-blue"></i>2018-08-17</p>
-                                <p class="label-heart"><i class="fa fa-heart aclebox-icon-red"></i>喜欢(666)</p>
-                            </div>
-                            <div class="content-title">
-                                <a href="details.html">
-                                    <h4>那年夏天,我们学会了分别,更理解了成熟</h4>
-                                </a>
-                                <p>人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春人生的道路，到底是平坦的少，崎岖的多。在平坦的 路上，携手同行的时候，周围有温暖的春</p>
-                            </div>
-                            <div class="content-detailed">
-                                <a href="details.html">查看全文>>></a>
-                            </div>
-                        </div>
+                        <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                         <!-- heart page -->
                         <div class="heart-page">
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <?php echo $page; ?>
                         </div>
                     </div>
                 </div>
@@ -397,7 +165,7 @@
                         <a>
                             <i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
                         <a>
-                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
                     </div>
                     <div class="footer-thank">
                         <a href="">感谢您的访问(我有话要说)!</a>
@@ -419,7 +187,7 @@
                 dynamicBullets: true,
             },
             autoplay: {
-                delay: 3000,
+                delay: 6000,
                 stopOnLastSlide: false,
                 disableOnInteraction: true,
             },

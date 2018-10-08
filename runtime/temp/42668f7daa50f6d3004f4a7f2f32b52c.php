@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"E:\www\zhangxxunblog\public/../application/admin\view\rule\role.html";i:1537885663;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"E:\www\zhangxxunblog\public/../application/admin\view\rule\role.html";i:1538964589;s:62:"E:\www\zhangxxunblog\application\admin\view\public\header.html";i:1537885663;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +26,7 @@
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
       title="刷新">
-      <i class="layui-icon" style="line-height:30px; display: block; padding-top: 4px">ဂ</i></a>
+      <i class="fa fa-refresh" style="line-height:30px; display: block; padding-top: 4px"></i></a>
   </div>
   <div class="x-body">
     <div class="layui-row">

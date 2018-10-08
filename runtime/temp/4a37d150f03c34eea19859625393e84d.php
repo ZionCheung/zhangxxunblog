@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\index.html";i:1538035632;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\index.html";i:1538979967;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -247,7 +247,7 @@
 							<a href="" class="img-href">
 								<img src="/static/upload/article/thumb/<?php echo $option['article_cover']; ?>" alt="">
 							</a>
-							<a class="img-rectangle" href="">
+							<a class="img-rectangle" href="<?php echo url('index/details/details',['cate'=>'optimization','serial' => $option['article_serial'].$option['id']]); ?>">
 								<h4><?php echo $option['article_name']; ?></h4>
 							</a>
 							<div class="img-line-left">

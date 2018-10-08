@@ -17,23 +17,24 @@ class Backstage extends Controller
         $userSion = session('userSion');
         $username = $userSion['userName'];
         $loginsign = $userSion['loginSign'];
+        $userId = $userSion['userId'];
         if (empty($username) || $loginsign != 1) {
             $this->redirect('admin/login/login');
         }
         $this->assign('userId', $userSion['userId']);
         $this->assign('username', $username);
-        $this->assign('name',$userSion['name']);
+        $this->assign('name', $userSion['name']);
         $mod = request()->module();
         $controller = request()->controller();
         $action = request()->action();
         $auth = new Auth;
         $rule = strtolower($mod . '/' . $controller . '/' . $action);
-        // $notCheck = ['admin/index/index','admin/home/home'];
-        // if (in_array($rule,$notCheck)) {
-        //     return true;
-        // }
-        // if (!$auth -> check($rule,$userId)){
-        //     $this ->error('没有操作权限','admin/home/home');
-        // }
+        $notCheck = ['admin/index/index','admin/index/loginout','admin/home/home'];
+        if (in_array($rule, $notCheck)) {
+            return true;
+        }
+        if (!$auth->check($rule, $userId)) {
+            $this->error('没有操作权限', 'admin/home/home','',2);
+        }
     }
 }

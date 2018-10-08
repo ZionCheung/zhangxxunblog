@@ -6,7 +6,7 @@ use app\admin\controller\Backstage as back;
 use app\admin\model\Rule as ruleModel;
 use think\Request;
 
-class rule extends back
+class Rule extends back
 {
     // 权限规则列表
     public function rule(Request $request, $key = '')

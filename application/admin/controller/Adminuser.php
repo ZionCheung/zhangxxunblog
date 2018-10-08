@@ -79,7 +79,7 @@ class Adminuser extends back
         $userHeadImg = Updatebase::baseImageHandle($img);
         return json($userHeadImg);
     }
-    // 修改管理员信息
+    // 修改管理员信息处理
     public function updateUserHandle(Request $request)
     {
         if (!$request->isAjax()) abort(404, '页面不存在!');

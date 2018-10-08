@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\www\zhangxxunblog\public/../application/admin\view\user\updateuser.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"E:\www\zhangxxunblog\public/../application/admin\view\user\updateuser.html";i:1538977677;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -6,16 +6,15 @@
     <meta charset="UTF-8">
     <title>zhangxxun</title>
     <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="/static/admin/css/font.css">
     <link rel="stylesheet" href="/static/admin/css/xadmin.css">
     <link rel="stylesheet" href="/static/admin/css/adminpub.css">
     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/admin/css/head.css" />
-    <link href="https://cdn.bootcss.com/cropper/3.1.3/cropper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/admin/css/cropper.min.css" />
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <script src="/static/js/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.bootcss.com/cropper/3.1.3/cropper.min.js"></script>
+    <script src="/static/admin/js/cropper.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/admin/js/head.js"></script>
     <script type="text/javascript" src="/static/admin/lib/layui/layui.js" charset="utf-8"></script>
@@ -32,7 +31,7 @@
         <a class="userbtn" data-target="#changeModal" data-toggle="modal">
             <span class="imgicon"><i class="fa fa-camera"></i></span>
             <?php if(strlen($userData['ad_headimg'])>11): ?>
-            <img src="" alt="" class="user-photo" >
+            <img src="" alt="" class="user-photo">
             <?php else: ?>
             <img src="/static/upload/admin/heads/<?php echo $userData['ad_headimg']; ?>" alt="" class="user-photo">
             <?php endif; ?>

@@ -432,4 +432,35 @@ class Article extends Model
         }
         return $articleData;
     }
+    /**
+     * 获取分类文章/分页
+     *
+     * @return void
+     */
+    public static function getAllCateArticle($cate, $page)
+    {
+        if (empty($cate)) abort(404, '页面不存在');
+        $articleCate = intval($cate);
+        $article = self::where('cid', 'eq', $cate)
+            ->where('article_sign', 'eq', 1)
+            ->field('id,article_serial,article_name,article_content,article_cover,article_time,article_like')
+            ->order('article_click', 'desc')
+            ->paginate($page, false, ['query' => request()->param()]);
+        $articleData = $article->toArray();
+        $articleData['page'] = $article->render();
+        unset($articleData['total']);
+        unset($articleData['per_page']);
+        unset($articleData['current_page']);
+        unset($articleData['last_page']);
+        if (!empty($articleData['data'])) {
+            foreach ($articleData['data'] as &$vo) {
+                $introduction = substr(strip_tags($vo['article_content']), 0, 260);
+                $search = array(" ", "　", "\n", "\r", "\t");
+                $replace = array("", "", "", "", "");
+                $vo['introduction'] = str_replace($search, $replace, $introduction);
+                unset($vo['article_content']);
+            }
+        }
+        return $articleData;
+    }
 }

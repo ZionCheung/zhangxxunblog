@@ -11,7 +11,7 @@
                     <select name="rpid">
                         <option value="0">顶级分类</option>
                         {volist name="ruleData" id="vo"}
-                            <option value="{$vo.id}">{$vo.title}</option>
+                        <option value="{$vo.id}">{$vo.title}</option>
                         {/volist}
                     </select>
                 </div>
@@ -49,7 +49,7 @@
                     <span class="x-red">*</span>方法/操作
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="raction" name="raction" required="" lay-verify="raction" class="layui-input">
+                    <input type="text" id="raction" name="raction" autocomplete="off" required="" lay-verify="raction" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
                     <span class="x-red">*</span>请输入方法名称(不区分大小写)
@@ -60,7 +60,7 @@
                     <span class="x-red">*</span>规则名称
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="rname" name="rname" required="" lay-verify="rname" class="layui-input">
+                    <input type="text" id="rname" name="rname" autocomplete="off" required="" lay-verify="rname" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
                     <span class="x-red">*</span>请输入规则名称(最好为中文简单易懂)
@@ -83,7 +83,8 @@
                     <span class="x-red">*</span>附加规则
                 </label>
                 <div class="layui-input-inline">
-                    <textarea name="rcondition" rows="10" lay-verify="rcondition" class="layui-textarea" style="resize:none;" placeholder="请输入附加规则(如果没有请保持为空)"></textarea>
+                    <textarea name="rcondition" rows="10" lay-verify="rcondition" class="layui-textarea" style="resize:none;"
+                        placeholder="请输入附加规则(如果没有请保持为空)"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
