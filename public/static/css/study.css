@@ -183,7 +183,7 @@
 .study-box .article-box .article-li .li-img-h,
 .study-box .article-box .article-li .li-img-f,
 .study-box .article-box .article-li .li-img-h-top{
-    background-image: url(../images/label-bg.png);
+    background-image: url(../images/label-bg.jpg);
     height: 338px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -244,11 +244,12 @@
     margin-left: 18px;
     color: antiquewhite;
 }
+.study-box .article-box .article-li .li-img-h-top,
 .study-box .article-box .article-li .li-img-h{
-    background-image: url(../images/7.jpg);
+    background-image: url(../images/label-bg3.jpg);
 }
 .study-box .article-box .article-li .li-img-f{
-    background-image: url(../images/6.jpg);
+    background-image: url(../images/label-bg2.jpg);
 }
 .study-box .article-box .acticle-more{
     width: 100%;

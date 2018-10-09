@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1538107517;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1539067362;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -88,7 +88,7 @@
 					<div class="alticle-label">
 						<h4 style="color: #009966">Label</h4>
 						<?php if(is_array($tags) || $tags instanceof \think\Collection || $tags instanceof \think\Paginator): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tags): $mod = ($i % 2 );++$i;if($tags['tags_sign'] == 1): ?>
-						<a href='' class="label-bm">
+						<a href="<?php echo url('index/aclemore/aclemore',['tags'=>$tags['tags_id']]); ?>" class="label-bm">
 							<span class="glyphicon glyphicon-tags" style="margin-right: 6px;"></span>
 							<?php echo $tags['tags_title']; ?>
 						</a>

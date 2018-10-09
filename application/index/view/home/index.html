@@ -127,7 +127,7 @@
 								</div>
 								<div class="aclebox-right col-sm-8">
 									<div class="header-label">
-										<a class="label-title" href="{$article.cate.id}">{$article.cate.cate_name}</a>
+										<a class="label-title" href="{:url('index/aclemore/aclemore',['articleCate'=>$article.cate.id])}">{$article.cate.cate_name}</a>
 										<img src="__STATIC__/images/header-label.png" alt="">
 									</div>
 									<div class="article-text">
@@ -161,7 +161,7 @@
 						{/volist}
 					</article>
 					<div class="coverage-left-footer">
-						<a href="aclemore">
+						<a href="{:url('index/aclemore/aclemore')}">
 							<b>查看更多>>></b>
 						</a>
 					</div>
@@ -194,7 +194,7 @@
 						<h3 class="label-top">标签</h3>
 						<ul class="label-list">
 							{volist name="tags" id="tags" empty="暂时没有标签"}
-							<a href="{$tags.id}">
+							<a href="{:url('index/aclemore/aclemore',['tags'=>$tags.id])}">
 								<li style="background-color:{$tags.tags_color}">
 									<h3>{$tags.tags_title}</h3>
 								</li>
@@ -276,7 +276,7 @@
 			<a>
 				<i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
 			<a>
-				<i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+				<i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
 		</div>
 		<div class="footer-thank">
 			<a href="">感谢您的访问(我有话要说)!</a>

@@ -437,11 +437,11 @@ class Article extends Model
      *
      * @return void
      */
-    public static function getAllCateArticle($cate, $page)
+    public static function getAllCateArticle($cate = '', $page = 8)
     {
         if (empty($cate)) abort(404, '页面不存在');
         $articleCate = intval($cate);
-        $article = self::where('cid', 'eq', $cate)
+        $article = self::where('cid', 'eq', $articleCate)
             ->where('article_sign', 'eq', 1)
             ->field('id,article_serial,article_name,article_content,article_cover,article_time,article_like')
             ->order('article_click', 'desc')
@@ -459,6 +459,72 @@ class Article extends Model
                 $replace = array("", "", "", "", "");
                 $vo['introduction'] = str_replace($search, $replace, $introduction);
                 unset($vo['article_content']);
+            }
+        }
+        return $articleData;
+    }
+    /**
+     * 获取文章study
+     *
+     * @param string $cate
+     * @param string $limit
+     * @return void
+     */
+    public static function getWhereCateArticle($cate = '', $limit = '')
+    {
+        if (empty($cate)) abort(404, '页面不存在');
+        $articleCate = intval($cate);
+        $article = self::where('cid', 'eq', $articleCate)
+            ->where('article_sign', 'eq', 1)
+            ->field('id,article_serial,article_name,article_time')
+            ->order('article_time', 'desc')
+            ->limit($limit)
+            ->select();
+        $articleData = [];
+        foreach ($article as $v) {
+            $articleData[] = $v->toArray();
+        }
+        return $articleData;
+    }
+    /**
+     * 更多文章
+     *
+     * @param string $key
+     * @param string $articleCate
+     * @param string $tags
+     * @param [type] $page
+     * @return void
+     */
+    public static function getMoreArticlePage($key = '', $articleCate = '', $tags = '', $page)
+    {
+        $articleCate = empty($articleCate) ? '' : intval($articleCate);
+        $tags = empty($tags) ? "" : intval($tags);
+        $article = self::where('article_sign', 'eq', 1)
+            ->where('article_name', 'like', '%' . $key . '%')
+            ->where('cid', 'like', '%' . $articleCate . '%')
+            ->where('lid', 'like', '%' . $tags . '%')
+            ->field('id,article_serial,article_name,article_content,article_cover,article_time,article_like,article_click,cid,lid')
+            ->order('article_time', 'desc')
+            ->paginate($page, false, ['query' => request()->param()]);
+        $articleData = $article->toArray();
+        $articleData['page'] = $article->render();
+        $articleData['count'] = self::where('article_sign', 'eq', 1)->Count();
+        unset($articleData['per_page']);
+        unset($articleData['current_page']);
+        unset($articleData['last_page']);
+        if (!empty($articleData)) {
+            foreach ($articleData['data'] as $k => &$vo) {
+                $introduction = substr(strip_tags($vo['article_content']), 0, 820);
+                $search = array(" ", "　", "\n", "\r", "\t");
+                $replace = array("", "", "", "", "");
+                $vo['introduction'] = str_replace($search, $replace, $introduction);
+                unset($vo['article_content']);
+                // if (!empty($tags)) {
+                //     $vo['lable'] = explode(',', $vo['lid']);
+                //     if (!in_array($tags, $vo['lable'])) {
+                //         unset($articleData['data'][$k]);
+                //     }
+                // }
             }
         }
         return $articleData;

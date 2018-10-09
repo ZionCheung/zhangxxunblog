@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\study.html";i:1537885663;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\study.html";i:1539069780;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,8 +83,7 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
                                     <?php if(is_array($cate) || $cate instanceof \think\Collection || $cate instanceof \think\Paginator): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cate): $mod = ($i % 2 );++$i;?>
-                                    <li <?php if($cate['id'] == 2): ?>class="active"<?php endif; ?>>
-                                        <a href="<?php echo url($cate['cate_link']); ?>"><?php echo $cate['cate_name']; ?></a>
+                                    <li <?php if($cate['id'] == 2): ?>class="active" <?php endif; ?>> <a href="<?php echo url($cate['cate_link']); ?>"><?php echo $cate['cate_name']; ?></a>
                                     </li>
                                     <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </ul>
@@ -116,40 +115,18 @@
                     <!-- study fore-end -->
                     <div class="article-li">
                         <div class="li-img">
-                            <h1>前端开发</h1>
+                            <!-- <h1>前端开发</h1> -->
                         </div>
                         <div class="li-text">
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- fore-end li -->
+                                <?php if(is_array($homeArticle) || $homeArticle instanceof \think\Collection || $homeArticle instanceof \think\Paginator): $i = 0; $__LIST__ = $homeArticle;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$nose): $mod = ($i % 2 );++$i;?>
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="<?php echo url('index/details/details',['cate'=>'nose','serial' => $nose['article_serial'].$nose['id']]); ?>"><?php echo $nose['article_name']; ?></a>
+                                    <span><?php echo date("Y-m-d",$nose['article_time']); ?></span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                             </ul>
                         </div>
                     </div>
@@ -157,87 +134,43 @@
                     <div class="article-li">
                         <div class="li-text">
                             <div class="li-img-h-top">
-                                <h1>后端开发</h1>
+                                <!-- <h1>后端开发</h1> -->
                             </div>
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- back-end li -->
+                                <?php if(is_array($backArticle) || $backArticle instanceof \think\Collection || $backArticle instanceof \think\Paginator): $i = 0; $__LIST__ = $backArticle;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$backend): $mod = ($i % 2 );++$i;?>
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="<?php echo url('index/details/details',['cate'=>'backend','serial' => $backend['article_serial'].$backend['id']]); ?>"><?php echo $backend['article_name']; ?></a>
+                                    <span><?php echo date("Y-m-d",$backend['article_time']); ?></span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                             </ul>
                         </div>
                         <div class="li-img-h">
-                            <h1>后端开发</h1>
+                            <!-- <h1>后端开发</h1> -->
                         </div>
                     </div>
                     <!-- study servicer -->
                     <div class="article-li">
                         <div class="li-img-f">
-                            <h1>其他</h1>
+                            <!-- <h1>其他</h1> -->
                         </div>
                         <div class="li-text">
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- back-end li -->
+                                <?php if(is_array($otherArticle) || $otherArticle instanceof \think\Collection || $otherArticle instanceof \think\Paginator): $i = 0; $__LIST__ = $otherArticle;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$other): $mod = ($i % 2 );++$i;?>
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="<?php echo url('index/details/details',['cate'=>'other','serial' => $other['article_serial'].$other['id']]); ?>"><?php echo $other['article_name']; ?></a>
+                                    <span><?php echo date("Y-m-d",$other['article_time']); ?></span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="acticle-more">
-                        <a href="">查看更多...</a>
+                        <a href="<?php echo url('index/aclemore/aclemore'); ?>">查看更多...</a>
                     </div>
                 </article>
             </div>
@@ -253,7 +186,7 @@
                         <a>
                             <i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
                         <a>
-                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlook.com</a>
                     </div>
                     <div class="footer-thank">
                         <a href="">感谢您的访问(我有话要说)!</a>

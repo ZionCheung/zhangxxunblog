@@ -82,8 +82,7 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
                                     {volist name="cate" id="cate"}
-                                    <li {if condition="$cate.id eq 2"}class="active"{/if}>
-                                        <a href="{:url($cate.cate_link)}">{$cate.cate_name}</a>
+                                    <li {if condition="$cate.id eq 2" }class="active" {/if}> <a href="{:url($cate.cate_link)}">{$cate.cate_name}</a>
                                     </li>
                                     {/volist}
                                 </ul>
@@ -115,40 +114,18 @@
                     <!-- study fore-end -->
                     <div class="article-li">
                         <div class="li-img">
-                            <h1>前端开发</h1>
+                            <!-- <h1>前端开发</h1> -->
                         </div>
                         <div class="li-text">
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- fore-end li -->
+                                {volist name="homeArticle" id="nose" empty="暂时没有数据哦"}
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="{:url('index/details/details',['cate'=>'nose','serial' => $nose.article_serial.$nose.id])}">{$nose.article_name}</a>
+                                    <span>{$nose.article_time|date="Y-m-d",###}</span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
@@ -156,87 +133,43 @@
                     <div class="article-li">
                         <div class="li-text">
                             <div class="li-img-h-top">
-                                <h1>后端开发</h1>
+                                <!-- <h1>后端开发</h1> -->
                             </div>
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- back-end li -->
+                                {volist name="backArticle" id="backend" empty="暂时没有数据哦"}
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="{:url('index/details/details',['cate'=>'backend','serial' => $backend.article_serial.$backend.id])}">{$backend.article_name}</a>
+                                    <span>{$backend.article_time|date="Y-m-d",###}</span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                         <div class="li-img-h">
-                            <h1>后端开发</h1>
+                            <!-- <h1>后端开发</h1> -->
                         </div>
                     </div>
                     <!-- study servicer -->
                     <div class="article-li">
                         <div class="li-img-f">
-                            <h1>其他</h1>
+                            <!-- <h1>其他</h1> -->
                         </div>
                         <div class="li-text">
                             <h2>最新文章</h2>
                             <ul class="text-list">
                                 <!-- back-end li -->
+                                {volist name="otherArticle" id="other" empty="暂时没有数据哦"}
                                 <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
+                                    <a href="{:url('index/details/details',['cate'=>'other','serial' => $other.article_serial.$other.id])}">{$other.article_name}</a>
+                                    <span>{$other.article_time|date="Y-m-d",###}</span>
                                 </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
-                                <li>
-                                    <a href="#">Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的</a>
-                                    <span>2018-08-25</span>
-                                </li>
+                                {/volist}
                             </ul>
                         </div>
                     </div>
                     <div class="acticle-more">
-                        <a href="">查看更多...</a>
+                        <a href="{:url('index/aclemore/aclemore')}">查看更多...</a>
                     </div>
                 </article>
             </div>
@@ -252,7 +185,7 @@
                         <a>
                             <i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
                         <a>
-                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
                     </div>
                     <div class="footer-thank">
                         <a href="">感谢您的访问(我有话要说)!</a>

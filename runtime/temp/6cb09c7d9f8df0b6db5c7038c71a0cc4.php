@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\www\zhangxxunblog\public/../application/index\view\home\aclemore.html";i:1539071780;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>查看更多_zhangxxun</title>
-    <link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
-    <link rel="stylesheet" href="__CSS__/public.css" />
-    <link rel="stylesheet" href="__CSS__/aclemore.css" />
-    <link rel="stylesheet" href="__CSS__/font-awesome.min.css" />
-    <script src="__JS__/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/public.css" />
+    <link rel="stylesheet" href="/static/css/aclemore.css" />
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             var img = $('img');
@@ -62,8 +63,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="{:url('index/index/index')}">
-                        <img src="__STATIC__/images/logo.png" alt="">
+                    <a href="<?php echo url('index/index/index'); ?>">
+                        <img src="/static/images/logo.png" alt="">
                     </a>
                 </div>
             </div>
@@ -76,67 +77,67 @@
                 <!-- content header -->
                 <div class="header-search col-sm-12">
                     <div class="search">
-                        <form action="{:url('index/aclemore/aclemore')}" method="GET">
+                        <form action="<?php echo url('index/aclemore/aclemore'); ?>" method="GET">
                             <input type="text" class="search-text" name="key" autocomplete="off" placeholder="请输入搜索内容">
                             <button type="submit" class="search-btn">全站查找</button>
                         </form>
-                        <p>本站共有<b>{$articleTotal}</b>篇文章,当前搜索共有<b>{$articleCurrent}</b>个结果!</p>
+                        <p>本站共有<b><?php echo $articleTotal; ?></b>篇文章,当前搜索共有<b><?php echo $articleCurrent; ?></b>个结果!</p>
                     </div>
                 </div>
                 <!-- content article -->
                 <div class="aclemore-content col-sm-12">
                     <!-- article list -->
-                    {volist name="article" id="article" empty="暂时没有数据哦"}
+                    <?php if(is_array($article) || $article instanceof \think\Collection || $article instanceof \think\Paginator): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "暂时没有数据哦" ;else: foreach($__LIST__ as $key=>$article): $mod = ($i % 2 );++$i;?>
                     <div class="article-box">
                         <div class="row">
                             <div class="aclebox-left col-sm-4">
-                                <a href="{:url('index/details/details',['cate'=>$article.cate.cate_english_name,'serial' => $article.article_serial.$article.id])}"
+                                <a href="<?php echo url('index/details/details',['cate'=>$article['cate']['cate_english_name'],'serial' => $article['article_serial'].$article['id']]); ?>"
                                     class="article-img">
-                                    <img src="__STATIC__/upload/article/thumb/{$article.article_cover}" alt="">
+                                    <img src="/static/upload/article/thumb/<?php echo $article['article_cover']; ?>" alt="">
                                 </a>
                             </div>
                             <div class="aclebox-right col-sm-8">
                                 <div class="header-label">
-                                    <a class="label-title" href="{:url('index/aclemore/aclemore',['articleCate'=>$article.cate.id])}">{$article.cate.cate_name}</a>
-                                    <img src="__STATIC__/images/header-label.png" alt="">
+                                    <a class="label-title" href="<?php echo url('index/aclemore/aclemore',['articleCate'=>$article['cate']['id']]); ?>"><?php echo $article['cate']['cate_name']; ?></a>
+                                    <img src="/static/images/header-label.png" alt="">
                                 </div>
                                 <div class="article-text">
-                                    <a href="{:url('index/details/details',['cate'=>$article.cate.cate_english_name,'serial' => $article.article_serial.$article.id])}"
+                                    <a href="<?php echo url('index/details/details',['cate'=>$article['cate']['cate_english_name'],'serial' => $article['article_serial'].$article['id']]); ?>"
                                         class="article-title">
-                                        <h4 title="{$article.article_name}">{$article.article_name}</h4>
+                                        <h4 title="<?php echo $article['article_name']; ?>"><?php echo $article['article_name']; ?></h4>
                                     </a>
                                 </div>
                                 <div class="article-content">
-                                    <p class="content-text">{$article.introduction}</p>
+                                    <p class="content-text"><?php echo $article['introduction']; ?></p>
                                 </div>
                             </div>
                             <div class="aclebox-footer col-sm-12">
                                 <div class="icon-left">
                                     <i class="fa fa-calendar aclebox-icon-blue"></i>
-                                    <span>{$article.article_time|date="Y-m-d",###}</span>
+                                    <span><?php echo date("Y-m-d",$article['article_time']); ?></span>
                                     <i class="fa fa-eye aclebox-icon"></i>
                                     <span>查看(
-                                        <b>{$article.article_click}</b>)次</span>
+                                        <b><?php echo $article['article_click']; ?></b>)次</span>
                                     <i class="fa fa-heart aclebox-icon-red"></i>
                                     <span>喜欢(
-                                        <b>{$article.article_like}</b>)</span>
+                                        <b><?php echo $article['article_like']; ?></b>)</span>
                                 </div>
                                 <div class="icon-left">
-                                    {volist name='article.tags' id="tags"}
+                                    <?php if(is_array($article['tags']) || $article['tags'] instanceof \think\Collection || $article['tags'] instanceof \think\Paginator): $i = 0; $__LIST__ = $article['tags'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tags): $mod = ($i % 2 );++$i;?>
                                     <i class="fa fa-tags" style="color:#337ab7"></i>
-                                    <span style="color:#337ab7">{$tags.tags_title}</span>
-                                    {/volist}
+                                    <span style="color:#337ab7"><?php echo $tags['tags_title']; ?></span>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
                                 </div>
                                 <div class="text-more">
-                                    <a href="{:url('index/details/details',['cate'=>$article.cate.cate_english_name,'serial' => $article.article_serial.$article.id])}"
+                                    <a href="<?php echo url('index/details/details',['cate'=>$article['cate']['cate_english_name'],'serial' => $article['article_serial'].$article['id']]); ?>"
                                         class="article-more">全文查看>>></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/volist}
+                    <?php endforeach; endif; else: echo "暂时没有数据哦" ;endif; ?>
                     <div class="pagebox">
-                        {$page}
+                        <?php echo $page; ?>
                     </div>
                 </div>
             </div>
@@ -160,7 +161,7 @@
             <p>蜀ICP备18020042号-1</p>
         </div>
     </footer>
-    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 </body>
 
 </html>

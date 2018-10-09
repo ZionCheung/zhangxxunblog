@@ -170,6 +170,7 @@ class Tags extends Model
         $tagsData = [];
         $tags = self::all($data);
         foreach ($tags as $k => $v) {
+            $tagsData[$k]['tags_id'] = $v->getAttr('id');
             $tagsData[$k]['tags_title'] = $v->getAttr('tags_title');
             $tagsData[$k]['tags_color'] = $v->getAttr('tags_color');
             $tagsData[$k]['tags_sign'] = $v->getAttr('tags_sign');

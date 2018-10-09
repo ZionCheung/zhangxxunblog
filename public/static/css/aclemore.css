@@ -100,8 +100,8 @@
     }
 }
 .aclemore-content{
-    padding: 18px;
-    min-height: 1000px;
+	padding: 18px;
+	min-height: 500px;
     position: relative;
 }
 .article-box{

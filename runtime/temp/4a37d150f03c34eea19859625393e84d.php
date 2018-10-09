@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\index.html";i:1538979967;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\index.html";i:1539069477;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,7 +128,7 @@
 								</div>
 								<div class="aclebox-right col-sm-8">
 									<div class="header-label">
-										<a class="label-title" href="<?php echo $article['cate']['id']; ?>"><?php echo $article['cate']['cate_name']; ?></a>
+										<a class="label-title" href="<?php echo url('index/aclemore/aclemore',['articleCate'=>$article['cate']['id']]); ?>"><?php echo $article['cate']['cate_name']; ?></a>
 										<img src="/static/images/header-label.png" alt="">
 									</div>
 									<div class="article-text">
@@ -162,7 +162,7 @@
 						<?php endforeach; endif; else: echo "暂时没有文章哦!" ;endif; ?>
 					</article>
 					<div class="coverage-left-footer">
-						<a href="aclemore">
+						<a href="<?php echo url('index/aclemore/aclemore'); ?>">
 							<b>查看更多>>></b>
 						</a>
 					</div>
@@ -195,7 +195,7 @@
 						<h3 class="label-top">标签</h3>
 						<ul class="label-list">
 							<?php if(is_array($tags) || $tags instanceof \think\Collection || $tags instanceof \think\Paginator): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "暂时没有标签" ;else: foreach($__LIST__ as $key=>$tags): $mod = ($i % 2 );++$i;?>
-							<a href="<?php echo $tags['id']; ?>">
+							<a href="<?php echo url('index/aclemore/aclemore',['tags'=>$tags['id']]); ?>">
 								<li style="background-color:<?php echo $tags['tags_color']; ?>">
 									<h3><?php echo $tags['tags_title']; ?></h3>
 								</li>
@@ -277,7 +277,7 @@
 			<a>
 				<i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
 			<a>
-				<i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+				<i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
 		</div>
 		<div class="footer-thank">
 			<a href="">感谢您的访问(我有话要说)!</a>
