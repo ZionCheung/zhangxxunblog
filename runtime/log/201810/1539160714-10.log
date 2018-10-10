@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2018-10-10T16:38:34+08:00 ] 127.0.0.1 GET /__STATIC__/images/face/69.gif
+[ info ] 127.0.0.1/__STATIC__/images/face/69.gif [运行时间：0.103479s][吞吐率：9.66req/s] [内存消耗：1,248.05kb] [文件加载：35]
+[ info ] [ LANG ] E:\www\zhangxxunblog\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+

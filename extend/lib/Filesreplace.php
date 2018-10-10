@@ -88,7 +88,4 @@ class FilesReplace
 		}
 		return $value;
 	}
-	public static function adb () {
-		echo 123;
-	}
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1539067362;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1539164304;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -109,13 +109,13 @@
 		</div>
 	</section>
 	<!-- comment list -->
-	<div class="comment" style="display:none">
+	<div class="comment">
 		<div class="container">
 			<div class="row">
 				<div class="comment-box col-sm-12">
 					<!-- comment title -->
 					<div class="comment-title">
-						<h3>评论区(<b>666</b>)</h3>
+						<h3>评论区(<b><?php echo $comment['total']; ?></b>)</h3>
 					</div>
 					<!-- comment input -->
 					<div class="comment-text">
@@ -130,30 +130,23 @@
 					<!-- comment contnet -->
 					<div class="comment-exhibition" id="exhi">
 						<!-- comment contnet li-->
+						<?php if(is_array($comment['data']) || $comment['data'] instanceof \think\Collection || $comment['data'] instanceof \think\Paginator): $i = 0; $__LIST__ = $comment['data'];if( count($__LIST__)==0 ) : echo "暂时还没有留言哦" ;else: foreach($__LIST__ as $key=>$comment): $mod = ($i % 2 );++$i;?>
 						<div class="exhi-list">
 							<div class="exhi-title">
-								<img src="/static/images/6.jpg" alt="">
+								<img src="/static/images/admin.jpg" alt="">
 								<div class="exhi-text">
-									<h4>zhangxxun <span style="color: #555">重庆重庆</span></h4>
-									<p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p>
+									<h4><?php echo $comment['comment_name']; ?></h4>
+									<p><?php echo date("Y.m.d H:i:s",$comment['comment_time']); ?><a href="" style="display:none">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b
+											 style="color: #009966"><?php echo $comment['comment_like']; ?></b>)</a></p>
 								</div>
 							</div>
 							<div class="exhi-mge">
-								<p>写的很好,我很喜欢</p>
+								<p><?php echo $comment['content']; ?></p>
 							</div>
 						</div>
-						<!-- comment contnet li-->
-						<div class="exhi-list">
-							<div class="exhi-title">
-								<img src="/static/images/6.jpg" alt="">
-								<div class="exhi-text">
-									<h4>zhangxxun <span style="color: #555">重庆重庆</span></h4>
-									<p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p>
-								</div>
-							</div>
-							<div class="exhi-mge">
-								<p>写的很好,我很喜欢</p>
-							</div>
+						<?php endforeach; endif; else: echo "暂时还没有留言哦" ;endif; ?>
+						<div id="commentPage" style="text-align:center;padding: 2px 8px;">
+							<?php echo $page; ?>
 						</div>
 					</div>
 				</div>
@@ -165,7 +158,7 @@
 		<div class="footer-contact">
 			<a><i class="fa fa-qq" style="margin-right: 8px;"></i>939129894</a>
 			<a><i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
-			<a><i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlool.com</a>
+			<a><i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
 		</div>
 		<div class="footer-thank">
 			<a href="">感谢您的访问(我有话要说)!</a>
@@ -186,16 +179,30 @@
 				path: '/static/images/face/' //表情存放的路径
 			});
 		});
+		$('#commentPage').on('click', 'li', function () {
+		});
 		// 点击添加留言
 		function commentSub() {
 			var textar = $('#cmcontent').val();
+			var articleId = <?php echo $article['id']; ?>;
 			if (textar.length == 0) {
-				alert('留言内容不能为空!');
+				zx_alert('留言内容不能为空!');
 			} else {
-				$('.exhi-list:last').after(
-					'<div class="exhi-list"><div class="exhi-title"><img src="/static/images/6.jpg" alt=""><div class="exhi-text"><h4>zhangxxun <span style="color: #555">重庆重庆</span></h4><p>2018.06.15 18:20:23<a href="">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">666</b>)</a></p></div></div><div class="exhi-mge"><p>' +
-					replace_em(textar) + '</p></div></div>')
-				$('#cmcontent').val('');
+				$.ajax({
+					type: 'post'
+					, dataType: 'json'
+					, url: "<?php echo url('index/details/articleComment'); ?>"
+					, data: { "content": textar, 'articleId': articleId }
+					, success: function (response) {
+						if (response.errno == 0) {
+							zx_alert(response.mge);
+							$('.exhi-list:last').after(
+								'<div class="exhi-list"><div class="exhi-title"><img src="/static/images/admin.jpg" alt=""><div class="exhi-text"><h4>网友</h4><p>' + response.time + '<a href="" style="display:none">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">0</b>)</a></p></div></div><div class="exhi-mge"><p>' +
+								replace_em(textar) + '</p></div></div>')
+							$('#cmcontent').val('');
+						}
+					}
+				});
 			}
 		}
 		// 匹配表情显示
@@ -226,7 +233,7 @@
 				, data: { 'id': aid }
 				, success: function (response) {
 					if (response.errno == 0) {
-						var like = parseInt($('#likeNum').html())+parseInt(1);
+						var like = parseInt($('#likeNum').html()) + parseInt(1);
 						$('#likeNum').html(like);
 					} else {
 						zx_alert(response);

@@ -5,6 +5,7 @@ namespace app\index\controller;
 use app\index\controller\Currency as indexCurr;
 use app\common\model\Article as articleModel;
 use app\common\model\Tags as tagsModel;
+use app\common\model\Comment as commentModel;
 use think\Request;
 use think\Session;
 
@@ -16,6 +17,10 @@ class Details extends indexCurr
         if (empty($serial)) abort(404, '页面不存在');
         $article = articleModel::getArticleDetails($serial);
         $tags = tagsModel::getAllWhereTags($article['lid']);
+        $articleId = intval(substr($serial, 14));
+        $comment = commentModel::getWhereAllComment($articleId);
+        $this->assign('comment', $comment);
+        $this->assign('page',$comment['page']);
         $this->assign('article', $article);
         $this->assign('tags', $tags);
         return $this->fetch('home/details');
@@ -56,5 +61,14 @@ class Details extends indexCurr
             ];
         }
         return json($response);
+    }
+    // 文章评论
+    public function articleComment(Request $request)
+    {
+        if (!$request->isAjax()) abort(404, '页面不存在');
+        $commentData = $request->post();
+        $commentIp = $request->ip();
+        $comment = commentModel::addComment($commentData, $commentIp);
+        return json($comment);
     }
 }

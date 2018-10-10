@@ -27,6 +27,7 @@ return [
     'article/:cate/:serial' => 'index/details/details',
     'article/click' => 'index/details/articleClick',
     'article/like' => 'index/details/articleLike',
+    'article/comment' => 'index/details/articleComment',
     // admin
     'zhangxxun' => 'admin/index/index',
     'zhangxxun/login' => 'admin/login/login',

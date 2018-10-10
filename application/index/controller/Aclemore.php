@@ -21,7 +21,6 @@ class AcleMore extends currIndex
                 unset($v['lid']);
             }
         }
-        dump($article);
         $this->assign('articleTotal', $article['count']);
         $this->assign('articleCurrent', $article['total']);
         $this->assign('article', $article['data']);
