@@ -20,7 +20,7 @@ class Details extends indexCurr
         $articleId = intval(substr($serial, 14));
         $comment = commentModel::getWhereAllComment($articleId);
         $this->assign('comment', $comment);
-        $this->assign('page',$comment['page']);
+        $this->assign('page', $comment['page']);
         $this->assign('article', $article);
         $this->assign('tags', $tags);
         return $this->fetch('home/details');
@@ -70,5 +70,35 @@ class Details extends indexCurr
         $commentIp = $request->ip();
         $comment = commentModel::addComment($commentData, $commentIp);
         return json($comment);
+    }
+    // 评论点赞
+    public function articleCommentLike(Request $request)
+    {
+        if (!$request->isAjax()) abort(404, '页面不存在');
+        $commentId = $request->post('commentId');
+        $currIp = $request->ip();
+        $sessionIs = Session::has('currComment');
+        if ($sessionIs) {
+            if (in_array($currIp, session('currComment')) && in_array($commentId, session('currComment'))) {
+                return '请休息一下再来吧!';
+            }
+        }
+        $comment = commentModel::setCommentLike($commentId);
+        if ($comment) {
+            $data = [
+                'ip' => $currIp,
+                'commentId' => $commentId,
+            ];
+            session('currComment', $data);
+            $response = [
+                'errno' => 0,
+                'errmge' => '点赞成功,感谢你的点赞!'
+            ];
+        } else {
+            $response = [
+                'errmge' => '系统错误,管理员关闭了点赞功能!'
+            ];
+        }
+        return json($response);
     }
 }

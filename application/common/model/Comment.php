@@ -68,4 +68,20 @@ class Comment extends Model
         }
         return $commentData;
     }
+    /**
+     * 评论点赞
+     *
+     * @param [type] $data
+     * @return void
+     */
+    public static function setCommentLike($data)
+    {
+        if (empty($data)) return false;
+        $commentId = intval($data);
+        $comment = self::get($commentId);
+        if (empty($comment)) return '系统错误';
+        $currComment = $comment->getAttr('comment_like') + 1;
+        $commentInfo = self::where('id', 'eq', $commentId)->update(['comment_like' => $currComment]);
+        return $commentInfo;
+    }
 }

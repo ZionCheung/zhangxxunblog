@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1539164304;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\details.html";i:1539224559;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -136,8 +136,12 @@
 								<img src="/static/images/admin.jpg" alt="">
 								<div class="exhi-text">
 									<h4><?php echo $comment['comment_name']; ?></h4>
-									<p><?php echo date("Y.m.d H:i:s",$comment['comment_time']); ?><a href="" style="display:none">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b
-											 style="color: #009966"><?php echo $comment['comment_like']; ?></b>)</a></p>
+									<p><?php echo date("Y.m.d H:i:s",$comment['comment_time']); ?>
+										<a href="" style="display:none">回复</a>
+										<a href="javascript:void(commentLike(<?php echo $comment['id']; ?>))">
+											<i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966" id="comLike_<?php echo $comment['id']; ?>"><?php echo $comment['comment_like']; ?></b>)
+										</a>
+									</p>
 								</div>
 							</div>
 							<div class="exhi-mge">
@@ -179,8 +183,22 @@
 				path: '/static/images/face/' //表情存放的路径
 			});
 		});
-		$('#commentPage').on('click', 'li', function () {
-		});
+		function commentLike(id) {
+			$.ajax({
+				type: 'post'
+				, dataType: 'json'
+				, url: "<?php echo url('index/details/articleCommentLike'); ?>"
+				, data: { 'commentId': id }
+				, success: function (response) {
+					if (response.errno == 0) {
+						var commentLike = parseInt($('#comLike_' + id).html()) + parseInt(1);
+						$('#comLike_' + id).html(commentLike);
+					} else {
+						zx_alert(response);
+					}
+				}
+			});
+		}
 		// 点击添加留言
 		function commentSub() {
 			var textar = $('#cmcontent').val();
@@ -197,7 +215,7 @@
 						if (response.errno == 0) {
 							zx_alert(response.mge);
 							$('.exhi-list:last').after(
-								'<div class="exhi-list"><div class="exhi-title"><img src="/static/images/admin.jpg" alt=""><div class="exhi-text"><h4>网友</h4><p>' + response.time + '<a href="" style="display:none">回复</a><a href=""><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">0</b>)</a></p></div></div><div class="exhi-mge"><p>' +
+								'<div class="exhi-list"><div class="exhi-title"><img src="/static/images/admin.jpg" alt=""><div class="exhi-text"><h4>网友</h4><p>' + response.time + '<a href="" style="display:none">回复</a><a><i class="fa fa-thumbs-o-up"></i>(<b style="color: #009966">0</b>)</a></p></div></div><div class="exhi-mge"><p>' +
 								replace_em(textar) + '</p></div></div>')
 							$('#cmcontent').val('');
 						}

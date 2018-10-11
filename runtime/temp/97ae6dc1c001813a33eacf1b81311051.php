@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\aboutme.html";i:1539237084;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
-    <link rel="stylesheet" href="__CSS__/font-awesome.min.css" />
-    <link rel="stylesheet" href="__CSS__/swiper-4.3.3.min.css" />
-    <link rel="stylesheet" href="__CSS__/public.css" />
-    <link rel="stylesheet" href="__CSS__/aboutme.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/css/swiper-4.3.3.min.css" />
+    <link rel="stylesheet" href="/static/css/public.css" />
+    <link rel="stylesheet" href="/static/css/aboutme.css" />
     <title>关于我_zhangxxun</title>
-    <script src="__JS__/jquery-3.3.1.min.js "></script>
+    <script src="/static/js/jquery-3.3.1.min.js "></script>
     <script type="text/javascript">
         window.onload = function () {
             var img = $('img');
@@ -66,16 +67,16 @@
     </div>
     <div class="nav-list">
         <ul class="nav-ul">
-            <a href="{:url('index/index/index')}">
+            <a href="<?php echo url('index/index/index'); ?>">
                 <li>网站首页</li>
             </a>
-            <a href="{:url('index/study/study')}">
+            <a href="<?php echo url('index/study/study'); ?>">
                 <li>学海无涯</li>
             </a>
-            <a href="{:url('index/heart/heart')}">
+            <a href="<?php echo url('index/heart/heart'); ?>">
                 <li>心灵鸡汤</li>
             </a>
-            <a href="{:url('index/noisylife/noisylife')}">
+            <a href="<?php echo url('index/noisylife/noisylife'); ?>">
                 <li>喧嚣生活</li>
             </a>
             <a class="action">
@@ -92,14 +93,14 @@
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide aboutme-introduction" style="background-image: url('__STATIC__/images/aboutme-bg1.jpg')">
+                <div class="swiper-slide aboutme-introduction" style="background-image: url('/static/images/aboutme-bg1.jpg')">
                     <section class="aboutme-cover">
                         <div class="container">
                             <div class="row">
                                 <div class="cover-box col-sm-12">
                                     <div class="logo">
-                                        <a href="{:url('index/index/index')}">
-                                            <img src="__STATIC__/images/aboutmelogo.png" alt="">
+                                        <a href="<?php echo url('index/index/index'); ?>">
+                                            <img src="/static/images/aboutmelogo.png" alt="">
                                         </a>
                                         <h3>2018</h3>
                                     </div>
@@ -121,7 +122,7 @@
                         </div>
                     </section>
                 </div>
-                <div class="swiper-slide aboutme-resume" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                <div class="swiper-slide aboutme-resume" style="background-image: url('/static/images/aboutme-bg2.jpg')">
                     <section class="resume">
                         <div class="resume-box">
                             <div class="intion-title">
@@ -135,7 +136,7 @@
                             </div>
                             <div class="intion-contact">
                                 <div class="we-qr">
-                                    <img src="__STATIC__/images/wx-QR.png" alt="">
+                                    <img src="/static/images/wx-QR.png" alt="">
                                     <span>微信二维码</span>
                                 </div>
                                 <div class="contact">
@@ -212,7 +213,7 @@
                                 </div>
                                 <div class="into-contact">
                                     <div class="we-qr">
-                                        <img src="__STATIC__/images/wx-QR.png" alt="">
+                                        <img src="/static/images/wx-QR.png" alt="">
                                         <span>微信二维码</span>
                                     </div>
                                     <div class="contact">
@@ -267,7 +268,7 @@
                         </div>
                     </section>
                 </div>
-                <div class="swiper-slide aboutme-skill" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                <div class="swiper-slide aboutme-skill" style="background-image: url('/static/images/aboutme-bg2.jpg')">
                     <div class="skill">
                         <div class="container">
                             <div class="row">
@@ -276,42 +277,42 @@
                                         <h1>我的技能</h1>
                                         <ul class="list-ul noroll">
                                             <li class="skill-php">
-                                                <img src="__STATIC__/images/php-icon.png" alt="">
+                                                <img src="/static/images/php-icon.png" alt="">
                                                 <span class="skill-text">Php</span>
                                                 <div class="php-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/sql-icon.png" alt="">
+                                                <img src="/static/images/sql-icon.png" alt="">
                                                 <span class="skill-text">MySql</span>
                                                 <div class="sql-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/html-icon.png" alt="">
+                                                <img src="/static/images/html-icon.png" alt="">
                                                 <span class="skill-text">Html</span>
                                                 <div class="html-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/css-icon.png" alt="">
+                                                <img src="/static/images/css-icon.png" alt="">
                                                 <span class="skill-text">Css</span>
                                                 <div class="css-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/js-icon.png" alt="">
+                                                <img src="/static/images/js-icon.png" alt="">
                                                 <span class="skill-text">Javascript</span>
                                                 <div class="js-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/ps-icon.png" alt="">
+                                                <img src="/static/images/ps-icon.png" alt="">
                                                 <span class="skill-text">PhotoShop</span>
                                                 <div class="ps-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/fl-icon.png" alt="">
+                                                <img src="/static/images/fl-icon.png" alt="">
                                                 <span class="skill-text">Flash</span>
                                                 <div class="fl-bg actionkAnmh"></div>
                                             </li>
                                             <li>
-                                                <img src="__STATIC__/images/more-icon.png" alt="">
+                                                <img src="/static/images/more-icon.png" alt="">
                                                 <span class="skill-text">其他软件</span>
                                                 <div class="more-bg actionkAnmh"></div>
                                             </li>
@@ -435,7 +436,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide aboutme-web" style="background-image: url('__STATIC__/images/aboutme-bg2.jpg')">
+                <div class="swiper-slide aboutme-web" style="background-image: url('/static/images/aboutme-bg2.jpg')">
                     <div class="web-info">
                         <div class="container">
                             <div class="row">
@@ -454,7 +455,7 @@
                                             <i class="fa fa-qq"></i>
                                         </a>
                                         <ul class="b-list">
-                                            <li class="logo"><img src="__STATIC__/images/aboutmelogo2.png" alt=""></li>
+                                            <li class="logo"><img src="/static/images/aboutmelogo2.png" alt=""></li>
                                             <li>
                                                 <p>zhangxxun | 2018.8</p>
                                             </li>
@@ -472,8 +473,8 @@
         </div>
     </div>
     </div>
-    <script src="__JS__/bootstrap.min.js "></script>
-    <script src="__JS__/swiper-4.3.3.min.js "></script>
+    <script src="/static/js/bootstrap.min.js "></script>
+    <script src="/static/js/swiper-4.3.3.min.js "></script>
     <script type="text/javascript ">
         var swiper = new Swiper('.swiper-container', {
             pagination: {

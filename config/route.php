@@ -28,6 +28,7 @@ return [
     'article/click' => 'index/details/articleClick',
     'article/like' => 'index/details/articleLike',
     'article/comment' => 'index/details/articleComment',
+    'comment/like' => 'index/details/articleCommentLike',
     // admin
     'zhangxxun' => 'admin/index/index',
     'zhangxxun/login' => 'admin/login/login',
