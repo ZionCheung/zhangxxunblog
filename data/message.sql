@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS zx_message;
+CREATE TABLE zx_message(
+    id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+    mge_contact VARCHAR(50) DEFAULT 'zhangxxun',
+    mge_content VARCHAR(255) NOT NULL,
+    mge_time INT NOT NULL,
+    mge_ip VARCHAR(100) NOT NULL,
+    mge_sign TINYINT UNSIGNED DEFAULT 0,
+    PRIMARY KEY(id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;

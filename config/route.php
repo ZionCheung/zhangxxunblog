@@ -29,6 +29,7 @@ return [
     'article/like' => 'index/details/articleLike',
     'article/comment' => 'index/details/articleComment',
     'comment/like' => 'index/details/articleCommentLike',
+    'aboutme/message' => 'index/aboutme/addMessage',
     // admin
     'zhangxxun' => 'admin/index/index',
     'zhangxxun/login' => 'admin/login/login',

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\www\zhangxxunblog\public/../application/index\view\home\aclemore.html";i:1539071780;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"E:\www\zhangxxunblog\public/../application/index\view\home\aclemore.html";i:1539566964;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,7 +158,7 @@
         </div>
         <div class="footer-record">
             <p>2018.8 | ZhangXxun_v2.0</p>
-            <p>蜀ICP备18020042号-1</p>
+            <a href="http://www.miitbeian.gov.cn" target="_black">蜀ICP备18020042号-1</a>
         </div>
     </footer>
     <script src="/static/js/bootstrap.min.js"></script>

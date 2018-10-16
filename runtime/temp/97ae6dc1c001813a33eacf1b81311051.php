@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\aboutme.html";i:1539237084;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\www\zhangxxunblog\public/../application/index\view\home\aboutme.html";i:1539575500;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,15 +140,15 @@
                                     <span>微信二维码</span>
                                 </div>
                                 <div class="contact">
-                                    <a href="">
+                                    <a href="http://wpa.qq.com/msgrd?v=3&uin=939129894&site=qq&menu=yes" target="_block">
                                         <i class="fa fa-qq"></i>
                                         <span>939129894</span>
                                     </a>
-                                    <a href="">
+                                    <a href="javascript::">
                                         <i class="fa fa-weixin"></i>
                                         <span>zhangxunxun957loveme</span>
                                     </a>
-                                    <a href="">
+                                    <a href="javascript::">
                                         <i class="fa fa-envelope-o"></i>
                                         <span>zhangxunxun1314@outlook.com</span>
                                         <span>|939129894@qq.com</span>
@@ -157,7 +157,7 @@
                                         <i class="fa fa-weibo"></i>
                                         <span>https://weibo.com/u/6018806697</span>
                                     </a>
-                                    <a href="" target="_block">
+                                    <a href="javascript::">
                                         <i class="fa fa-github"></i>
                                         <span>ZionCheung</span>
                                     </a>
@@ -176,12 +176,12 @@
                             <h3>给我留言</h3>
                             <div class="reform">
                                 <label for="contact">联系方式</label>
-                                <input type="text" name="contact" class="aboutme-contact">
+                                <input type="text" id="mgeContact" placeholder="请输入QQ/微信" autocomplete="off" class="aboutme-contact">
                                 <label for="">留言内容</label>
-                                <textarea name="" rows="10" class="reform-text"></textarea>
+                                <textarea id="mgeContent" rows="10" class="reform-text" placeholder="请输入留言内容50字左右!"></textarea>
                             </div>
                             <div class="subbtn">
-                                <button class="btn">点击留言</button>
+                                <button class="btn" onclick="addMessage()">点击留言</button>
                             </div>
                             <div class="reline"></div>
                         </div>
@@ -256,19 +256,19 @@
                                 </div>
                                 <div class="reform noroll">
                                     <label for="contact">联系方式</label>
-                                    <input type="text" name="contact" class="aboutme-contact">
+                                    <input type="text" id="mgeContact" placeholder="请输入QQ/微信" autocomplete="off" class="aboutme-contact">
                                     <label for="">留言内容</label>
-                                    <textarea name="" rows="10" class="reform-text"></textarea>
+                                    <textarea id="mgeContent" rows="10" class="reform-text" placeholder="请输入留言内容50字左右!"></textarea>
                                 </div>
                                 <div class="subbtn">
-                                    <button class="btn">点击留言</button>
+                                    <button class="btn" onclick="addMessage()">点击留言</button>
                                 </div>
                                 <div class="reline"></div>
                             </div>
                         </div>
                     </section>
                 </div>
-                <div class="swiper-slide aboutme-skill" style="background-image: url('/static/images/aboutme-bg2.jpg')">
+                <div class="swiper-slide aboutme-skill" style="background-image: url('/static/images/aboutme-bg3.jpg')">
                     <div class="skill">
                         <div class="container">
                             <div class="row">
@@ -475,6 +475,31 @@
     </div>
     <script src="/static/js/bootstrap.min.js "></script>
     <script src="/static/js/swiper-4.3.3.min.js "></script>
+    <script type="text/javascript">
+        function addMessage() {
+            var contact = $('#mgeContact').val();
+            var content = $('#mgeContent').val();
+            if (contact.length == 0) return false;
+            if (content.length == 0) return false;
+            $.ajax({
+                type: 'POST'
+                , dataType: 'json'
+                , url: "<?php echo url('index/aboutme/addMessage'); ?>"
+                , data: { 'contact': contact, 'content': content }
+                , success: function (response) {
+                    zx_alert(response);
+                    $('#mgeContact').val('');
+                    $('#mgeContent').val('');
+                }
+            });
+        }
+        function zx_alert(e) {
+            $("body").append('<div id="msg"><div class="" id="msg_top">温馨提示<span class="msg_close">×</span></div><div id="msg_cont">' + e + '</div><div class="msg_close" id="msg_clear">确定</div></div>');
+            $(".msg_close").click(function () {
+                $("#msg").remove();
+            });
+        }
+    </script>
     <script type="text/javascript ">
         var swiper = new Swiper('.swiper-container', {
             pagination: {

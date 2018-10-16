@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\study.html";i:1539069780;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\www\zhangxxunblog\public/../application/index\view\home\study.html";i:1539567044;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,14 +186,14 @@
                         <a>
                             <i class="fa fa-weixin" style="margin-right: 8px;"></i>zhangxunxun957loveme</a>
                         <a>
-                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun957@outlook.com</a>
+                            <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
                     </div>
                     <div class="footer-thank">
                         <a href="">感谢您的访问(我有话要说)!</a>
                     </div>
                     <div class="footer-record">
                         <p>2018.8 | ZhangXxun_v2.0</p>
-                        <p>蜀ICP备18020042号-1</p>
+                        <a href="http://www.miitbeian.gov.cn" target="_black">蜀ICP备18020042号-1</a>
                     </div>
                 </div>
             </div>
