@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\www\zhangxxunblog\public/../application/index\view\home\noisylife.html";i:1539567027;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"E:\www\zhangxxunblog\public/../application/index\view\home\noisylife.html";i:1539744300;s:63:"E:\www\zhangxxunblog\application\index\view\public\message.html";i:1539744601;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -168,7 +168,7 @@
                             <i class="fa fa-envelope-o" style="margin-right: 8px;"></i>zhangxunxun1314@outlook.com</a>
                     </div>
                     <div class="footer-thank">
-                        <a href="">感谢您的访问(我有话要说)!</a>
+                        <a onclick="openMessage()">感谢您的访问(我有话要说)!</a>
                     </div>
                     <div class="footer-record">
                         <p>2018.8 | ZhangXxun_v2.0</p>
@@ -180,6 +180,83 @@
     </footer>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/swiper-4.3.3.min.js"></script>
+    <div id="message">
+    <div class="mge-input">
+        <div class="mge-title">
+            <h3>给我留言</h3>
+        </div>
+        <div class="mge-content">
+            <div class="form-group">
+                <label for="" style="color:#fff;">联系方式</label>
+                <input type="text" class="form-control" id="mgeContact" autocomplete="off" placeholder="请输入您的QQ/微信/邮箱">
+            </div>
+            <label for="" style="color:#fff;">留言内容</label>
+            <textarea class="form-control" id="mgeContent" rows="12" placeholder="请输入留言内容100字左右"></textarea>
+        </div>
+        <div class="mge-button">
+            <button class="btn btn-success" onclick="sbtMessage()">确认留言</button>
+            <button class="btn btn-danger" onclick="closeMessage()">我点错了</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function openMessage() {
+        var mgeWidth = $(document.body).width();
+        var mgeHeight = $(document.body).height();
+        $('#message').css('width', mgeWidth);
+        $('#message').css('height', mgeHeight + 100);
+        var winWidth = $(window).width();
+        var winHeight = $(window).height();
+        var scrollTop = $(document).scrollTop();
+        var scrollLeft = $(document).scrollLeft();
+        var divWidth = $('.mge-input').width();
+        var divHeight = $('.mge-input').height();
+        var dleft = ((winWidth - divWidth) / 2) + scrollLeft;
+        var dtop = ((winHeight - divHeight) / 2) + scrollTop;
+        $('.mge-input').animate({
+            left: dleft,
+            top: dtop
+        }, 400);
+    }
+    function closeMessage() {
+        $('#message').animate({
+            width: 0
+            , height: 0
+        }, 200);
+        $('.mge-input').animate({
+            left: '-600px'
+            , top: '-200px'
+        }, 200);
+    }
+    function sbtMessage() {
+        var contact = $('#mgeContact').val();
+        var content = $('#mgeContent').val();
+        if (contact.length == 0 || content.length == 0) return false;
+        $.ajax({
+            type: 'post'
+            , dataType: 'json'
+            , url: "<?php echo url('index/aboutme/addMessage'); ?>"
+            , data: { 'contact': contact, 'content': content }
+            , success: function (response) {
+                zx_alert(response);
+                $('#message').animate({
+                    width: 0
+                    , height: 0
+                }, 200);
+                $('.mge-input').animate({
+                    left: '-600px'
+                    , top: '-200px'
+                }, 200);
+            }
+        });
+    }
+    function zx_alert(e) {
+        $("body").append('<div id="msg"><div class="" id="msg_top">温馨提示<span class="msg_close">×</span></div><div id="msg_cont">' + e + '</div><div class="msg_close" id="msg_clear">确定</div></div>');
+        $(".msg_close").click(function () {
+            $("#msg").remove();
+        });
+    }
+</script>
     <script type="text/javascript">
         var swiper = new Swiper('.swiper-container', {
             pagination: {
